@@ -16,7 +16,7 @@ export const theme: DefaultTheme = {
     gold: '#FFD700',
     gray: '#5a5a5a',
     lightgray: '#D3D3D3',
-    orange: '	#FF8C00',
     white: '#fff',
+    orange: '	#FF8C00',
   }
 }
