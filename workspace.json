@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "venus-funeral-website": "apps/venus-funeral-website",
+    "venus-funeral-website-e2e": "apps/venus-funeral-website-e2e"
+  }
+}
