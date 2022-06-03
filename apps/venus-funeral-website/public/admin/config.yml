@@ -72,8 +72,8 @@ collections:
         fields:
           - { label: "流程", name: "processes", widget: "list" }
       - label: "聯絡我們"
-        name: "processes"
-        file: "content/processes.md"
+        name: "contactus"
+        file: "content/contactus.md"
         fields:
           - { label: "描述", name: "description", widget: "text" }
           - { label: "地址", name: "address", widget: "string" }
