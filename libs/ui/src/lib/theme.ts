@@ -13,10 +13,18 @@ export const theme: DefaultTheme = {
     body2: '0.875rem',
   },
   colors: {
-    gold: '#FFD700',
+    gold: '#B48650',
     gray: '#5a5a5a',
     lightgray: '#D3D3D3',
     white: '#fff',
     orange: '	#FF8C00',
-  }
+    lightgold: '#f3ae5e',
+    inherit: 'inherit',
+  },
+  breakPoints: {
+    mobile: '@media only screen and (max-width: 599px)',
+    tablet: '@media only screen and (min-width: 600px)',
+    desktop: '@media only screen and (min-width: 1200px)'
+  },
+  maxWidth: '1240px',
 }

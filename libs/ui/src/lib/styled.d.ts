@@ -8,6 +8,8 @@ declare module 'styled-components' {
       lightgray: string;
       orange: string;
       white: string;
+      lightgold: string;
+      inherit: string;
     };
     fontSize: {
       h6: string;
@@ -20,5 +22,11 @@ declare module 'styled-components' {
       body1: string;
       body2: string;
     };
+    breakPoints: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    },
+    maxWidth: string;
   }
 }

@@ -1,5 +1,7 @@
+import { theme } from '@venus-funeral/ui';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ThemeProvider } from 'styled-components';
 import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -9,7 +11,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to venus-funeral-website!</title>
       </Head>
       <main className="app">
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </main>
     </>
   );

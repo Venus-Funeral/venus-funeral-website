@@ -398,3 +398,11 @@ summary svg {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+* {
+  color: #222;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}

@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@venus-funeral/ui": ["libs/ui/src/index.ts"]
+      "@venus-funeral/ui": ["libs/ui/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

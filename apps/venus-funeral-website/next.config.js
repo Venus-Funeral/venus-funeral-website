@@ -8,9 +8,21 @@ const nextConfig = {
   nx: {
     // Set this to true if you would like to to use SVGR
     // See: https://github.com/gregberge/svgr
-    svgr: false,
+    svgr: true,
   },
-  styledComponents: true,
+  compiler: {
+    styledComponents: true,
+  },
+  webpack: (cfg) => {
+    cfg.module.rules.push(
+        {
+            test: /\.md$/,
+            loader: 'frontmatter-markdown-loader',
+            options: { mode: ['react-component'] }
+        }
+    )
+    return cfg;
+}
 };
 
 module.exports = withNx(nextConfig);
