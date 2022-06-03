@@ -169,7 +169,7 @@ const OutterWrapper = styled.div`
 const AboutusPage: NextPage = () => {
   console.log('mount')
   return (
-    <PageLayout>
+    <PageLayout title="關於我們" description={companyIntro}>
       <Container>
         <StyledBannerWrapper>
           <OurStoryWrapper>
@@ -184,7 +184,7 @@ const AboutusPage: NextPage = () => {
           </OurStoryWrapper>
           <ImageWrapper>
             <Fade>
-              <BannerImage src="/aboutus.JPG" alt="" />
+              <BannerImage src="/aboutus.jpg" alt="banner image" />
             </Fade>
           </ImageWrapper>
         </StyledBannerWrapper>
@@ -192,7 +192,7 @@ const AboutusPage: NextPage = () => {
         <Fade delay={600}>
       <OutterWrapper>
           <OwnerContainer>
-            <OwnerImage src="/owner-1.JPG" />
+            <OwnerImage src="/owner.jpg" alt="Owner Image"/>
             <OwnerTextWrapper>
               <StyledHeader disableUnderline component="h6" fontSize="h3" color="inherit">Title</StyledHeader>
               <Text component="p" fontSize="body1" color="inherit">

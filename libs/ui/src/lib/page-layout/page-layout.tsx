@@ -9,10 +9,6 @@ export interface PageLayoutProps {
   description?: string;
 }
 
-const StyledPageLayout = styled.div`
-  color: pink;
-`;
-
 export function PageLayout({
   title,
   description,
@@ -24,7 +20,6 @@ export function PageLayout({
         <meta name="keywords" content="" />
         <meta name="description" content={description} />
         {/*Facebook SEO*/}
-        {/* <meta property="og:url" content={`http://www.chainsify${path}`} /> */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />

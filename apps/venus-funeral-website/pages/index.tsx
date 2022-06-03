@@ -26,7 +26,7 @@ export function Index() {
   return (
     <PageLayout
       title="金星殯儀"
-      description="123"
+      description="金星殯儀"
     >
       <Container>
         <CardWrapper>
