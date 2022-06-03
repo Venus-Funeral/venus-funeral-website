@@ -11,9 +11,6 @@ collections:
         name: "serviceOverviews"
         file: "content/serviceOverviews.md"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Publish Date", name: "date", widget: "datetime" }
-          - { label: "Body", name: "body", widget: "markdown" }
           - label: "服務"
             name: "services"
             widget: list
@@ -92,6 +89,7 @@ collections:
           - { label: "客戶名稱", name: "name", widget: "string" }
           - { label: "內容", name: "content", widget: "text" }
           - { label: "日期", name: "createdDate", widget: "date", required: false }
+local_backend: true
   # - name: "testimonies"
   #   label: "客戶見證"
   #   folder: "testimonies/"
