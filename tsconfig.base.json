@@ -18,5 +18,8 @@
       "@venus-funeral/ui": ["libs/ui/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "files": [
+    "./libs/ui/src/lib/styled.d.ts"
+  ]
 }

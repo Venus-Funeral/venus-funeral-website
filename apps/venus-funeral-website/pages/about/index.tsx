@@ -82,6 +82,7 @@ const OurStoryWrapper = styled.div`
     top: 0;
     align-items: center ;
     position: absolute;
+    padding: 0;
   }
 `;
 
