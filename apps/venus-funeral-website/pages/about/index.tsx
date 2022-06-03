@@ -24,6 +24,7 @@ const StyledBannerWrapper = styled.div`
     justify-content: flex-end;
     flex-direction: row;
     max-height: 600px;
+    height: 600px;
   }
 `
 
@@ -187,17 +188,19 @@ const AboutusPage: NextPage = () => {
           </ImageWrapper>
         </StyledBannerWrapper>
       </Container>
+        <Fade delay={600}>
       <OutterWrapper>
-        <OwnerContainer>
-          <OwnerImage src="/owner-1.JPG" />
-          <OwnerTextWrapper>
-            <StyledHeader disableUnderline component="h6" fontSize="h3" color="inherit">Title</StyledHeader>
-            <Text component="p" fontSize="body1" color="inherit">
-              {founderIntro}
-            </Text>
-          </OwnerTextWrapper>
-        </OwnerContainer>
+          <OwnerContainer>
+            <OwnerImage src="/owner-1.JPG" />
+            <OwnerTextWrapper>
+              <StyledHeader disableUnderline component="h6" fontSize="h3" color="inherit">Title</StyledHeader>
+              <Text component="p" fontSize="body1" color="inherit">
+                {founderIntro}
+              </Text>
+            </OwnerTextWrapper>
+          </OwnerContainer>
       </OutterWrapper>
+        </Fade>
     </PageLayout>
   )
 }
