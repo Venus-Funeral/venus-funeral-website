@@ -3,6 +3,8 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 import './styles.css';
+import 'swiper/css';
+import "swiper/css/effect-cards";
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (

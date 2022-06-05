@@ -19,7 +19,5 @@
     }
   },
   "exclude": ["node_modules", "tmp"],
-  "files": [
-    "./libs/ui/src/lib/styled.d.ts"
-  ]
+  "files": ["./libs/ui/src/lib/styled.d.ts"]
 }

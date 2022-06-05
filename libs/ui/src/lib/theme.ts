@@ -20,6 +20,7 @@ export const theme: DefaultTheme = {
     orange: '	#FF8C00',
     lightgold: '#f3ae5e',
     inherit: 'inherit',
+    default: '#1B3643',
   },
   breakPoints: {
     mobile: '@media only screen and (max-width: 599px)',

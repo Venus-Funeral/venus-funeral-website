@@ -91,13 +91,17 @@ const TextWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   background: white;
-  box-shadow:0 6px 20px rgb(0 0 0 / 20%);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 20%);
   border-radius: 8px;
   width: 100%;
   height: auto;
-  padding: 40px 42px;
+  padding: 40px 24px;
   letter-spacing: 1.05px ;
   line-height: 180% ;
+
+  ${({ theme }) => theme.breakPoints.desktop} {
+    padding: 40px 42px;
+  }
 `
 
 const ImageWrapper = styled.div`

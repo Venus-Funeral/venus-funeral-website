@@ -26,6 +26,7 @@ const LinksWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 24px;
 `
 
 const StyledLink = styled.a`
@@ -60,6 +61,11 @@ const StyledLink = styled.a`
   }
 `
 
+const navItems = [
+  { label: '關於我們', href: '/about' },
+  { label: '服務流程', href: '/processes' },
+]
+
 export function Navbar(props: NavbarProps) {
   return (
     <StyledNavbar>
@@ -70,11 +76,15 @@ export function Navbar(props: NavbarProps) {
           </a>
         </Link>
         <LinksWrapper>
-          <Link href="/about" passHref>
-            <StyledLink >
-              關於我們
-            </StyledLink>
-          </Link>
+          {
+            navItems && navItems.map(({ label, href }) => (
+              <Link href={href} key={href} passHref>
+                <StyledLink >
+                  {label}
+                </StyledLink>
+              </Link>
+            ))
+          }
         </LinksWrapper>
       </StyledContainer>
     </StyledNavbar>

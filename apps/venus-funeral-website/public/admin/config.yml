@@ -20,6 +20,12 @@ collections:
               - { label: "價格至", name: "priceTo", widget: "number", required: false }
               - { label: "價格由", name: "priceFrom", widget: "number", required: false }
               - { label: "服務詳情", name: "serviceDescription", widget: "text", required: false }
+          - label: "服務重點"
+            name: "sellPoints"
+            widget: list
+            fields:
+              - { label: "標題", name: "header", widget: "string" }
+              - { label: "內容", name: "content", widget: "text" } 
       - label: "關於金星"
         name: "aboutus"
         file: "content/aboutus.md"
@@ -39,7 +45,10 @@ collections:
             fields:
               - { label: "標題", name: "header", widget: "string" }
               - { label: "內容", name: "description", widget: "text" }
-          - { label: "服務承諾", name: "ourPromises", widget: "list" }
+          - label: "服務承諾"
+            name: "ourPromises"
+            widget: "list"
+            default: [""]
       - label: "特色服務"
         name: "specialServices"
         file: "content/specialServices.md"
@@ -58,7 +67,7 @@ collections:
         file: "content/flowerService.md"
         fields:
           - { label: "描述", name: "description", widget: "text" }
-          - { label: "服務重點", name: "serviceKeyPoints", widget: "list" }
+          - { label: "服務重點", name: "serviceKeyPoints", widget: "list", default: [""] }
           - label: "花牌相片"
             name: "services"
             widget: list
@@ -70,7 +79,11 @@ collections:
         name: "processes"
         file: "content/processes.md"
         fields:
-          - { label: "流程", name: "processes", widget: "list" }
+          - label: "流程"
+            name: "processes"
+            widget: "list"
+            fields:
+              - { label: "內容", name: "step", widget: "string" }
       - label: "聯絡我們"
         name: "contactus"
         file: "content/contactus.md"
@@ -86,16 +99,11 @@ collections:
         name: "testimonies"
         file: "content/testimonies.md"
         fields:
-          - { label: "客戶名稱", name: "name", widget: "string" }
-          - { label: "內容", name: "content", widget: "text" }
-          - { label: "日期", name: "createdDate", widget: "date", required: false }
+          - label: "見證"
+            name: "testimonies"
+            widget: "list"
+            fields:
+              - { label: "客戶名稱", name: "name", widget: "string" }
+              - { label: "內容", name: "content", widget: "text" }
+              - { label: "日期", name: "createdDate", widget: "date", required: false }
 local_backend: true
-  # - name: "testimonies"
-  #   label: "客戶見證"
-  #   folder: "testimonies/"
-  #   create: true
-  #   files:
-  #     - {label: "Title", name: "title", widget: "string"}
-  #     - {label: "Publish Date", name: "date", widget: "datetime"}
-  #     - {label: "Featured Image", name: "thumbnail", widget: "image"}
-  #     - {label: "Body", name: "body", widget: "markdown"}

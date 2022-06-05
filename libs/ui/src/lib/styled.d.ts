@@ -10,6 +10,7 @@ declare module 'styled-components' {
       white: string;
       lightgold: string;
       inherit: string;
+      default: string;
     };
     fontSize: {
       h6: string;
