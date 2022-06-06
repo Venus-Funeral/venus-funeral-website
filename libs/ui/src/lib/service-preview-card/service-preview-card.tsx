@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import Text from '../text/text';
+import { transformCloundinaryImage } from '../../utils/transformCloundinaryImage';
 
 /* eslint-disable-next-line */
 export interface ServicePreviewCardProps {
@@ -8,7 +10,7 @@ export interface ServicePreviewCardProps {
 }
 
 const StyledServicePreviewCard = styled.div<Partial<ServicePreviewCardProps>>`
-  background-color: ${({theme}) => theme.colors.gray};
+  background-color: ${({ theme }) => theme.colors.gray};
   background-image: url(${props => props.thumbnail});
   background-size: 100%;
   background-blend-mode: overlay;
@@ -26,11 +28,11 @@ const StyledServicePreviewCard = styled.div<Partial<ServicePreviewCardProps>>`
     transition: 300ms ease-out;
   }
 
-  ${({theme}) => theme.breakPoints.desktop} {
+  ${({ theme }) => theme.breakPoints.desktop} {
     height: 150px;
   }
 
-  ${({theme}) => theme.breakPoints.tablet} {
+  ${({ theme }) => theme.breakPoints.tablet} {
     height: 160px;
   }
 `;
@@ -49,11 +51,15 @@ export function ServicePreviewCard({
   serviceName,
 }: ServicePreviewCardProps) {
   return (
-    <StyledServicePreviewCard thumbnail={thumbnail}>
-      <StyledText color="white" fontSize="subtitle">
-        {serviceName}
-      </StyledText>
-    </StyledServicePreviewCard>
+    <Link href={`/services/${serviceName}`}>
+      <a>
+        <StyledServicePreviewCard thumbnail={transformCloundinaryImage(thumbnail, 300)}>
+          <StyledText color="white" fontSize="subtitle">
+            {serviceName}
+          </StyledText>
+        </StyledServicePreviewCard>
+      </a>
+    </Link>
   );
 }
 

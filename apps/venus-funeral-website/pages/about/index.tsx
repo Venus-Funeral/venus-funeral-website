@@ -1,4 +1,4 @@
-import { Container, PageLayout, Text } from "@venus-funeral/ui";
+import { Container, PageLayout, Text, TextBanner } from "@venus-funeral/ui";
 import { NextPage } from "next";
 import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
@@ -174,7 +174,12 @@ const AboutusPage: NextPage = () => {
   console.log('mount')
   return (
     <PageLayout title="關於我們" description={companyIntro}>
-      <Container>
+      <TextBanner
+        header="我們的故事"
+        content={companyIntro}
+        imageSrc="/aboutus.jpg"
+      />
+      {/* <Container>
         <StyledBannerWrapper>
           <OurStoryWrapper>
             <Slide left delay={500}>
@@ -192,7 +197,7 @@ const AboutusPage: NextPage = () => {
             </Fade>
           </ImageWrapper>
         </StyledBannerWrapper>
-      </Container>
+      </Container> */}
         <Fade delay={600}>
       <OutterWrapper>
           <OwnerContainer>

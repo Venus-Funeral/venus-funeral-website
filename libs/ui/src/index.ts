@@ -1,3 +1,4 @@
+export * from './lib/text-banner/text-banner';
 export * from './lib/fab/fab';
 export * from './lib/testimony-card/testimony-card';
 export * from './lib/header/header';
@@ -10,3 +11,4 @@ export * from './lib/logo/logo';
 export * from './lib/ui';
 export * from './lib/theme';
 export * from './lib/button/button';
+export * from './utils/transformCloundinaryImage';

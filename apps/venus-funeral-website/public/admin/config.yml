@@ -2,6 +2,11 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 media_folder: public/img
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: djblau8at
+    api_key: 583977975538897
 public_folder: img
 collections:
   - name: "pages"
@@ -17,6 +22,7 @@ collections:
             fields:
               - { label: "服務名稱", name: "serviceName", widget: "string" }
               - { label: "預覽相片", name: "thumbnail", widget: "image" }
+              - { label: "服務相片", name: "serviceImage", widget: "image", required: false }
               - { label: "價格至", name: "priceTo", widget: "number", required: false }
               - { label: "價格由", name: "priceFrom", widget: "number", required: false }
               - { label: "服務詳情", name: "serviceDescription", widget: "text", required: false }
@@ -106,4 +112,15 @@ collections:
               - { label: "客戶名稱", name: "name", widget: "string" }
               - { label: "內容", name: "content", widget: "text" }
               - { label: "日期", name: "createdDate", widget: "date", required: false }
+      - label: "媒體報導"
+        name: "mediaReports"
+        file: "content/mediaReports.md"
+        fields:
+          - label: "報導"
+            name: "reports"
+            widget: "list"
+            fields:
+              - { label: "標題", name: "header", widget: "string", required: false }
+              - { label: "預覽相片", name: "thumbnail", widget: "image" }
+              - { label: "Link", name: "link", widget: "string" }
 local_backend: true
