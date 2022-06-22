@@ -1,3 +1,4 @@
+export * from './lib/footer/footer';
 export * from './lib/text-banner/text-banner';
 export * from './lib/fab/fab';
 export * from './lib/testimony-card/testimony-card';
