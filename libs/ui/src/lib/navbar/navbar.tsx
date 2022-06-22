@@ -64,6 +64,7 @@ const StyledLink = styled.a`
 const navItems = [
   { label: '關於我們', href: '/about' },
   { label: '服務流程', href: '/processes' },
+  { label: '帛事花牌', href: '/flowers' },
 ]
 
 export function Navbar(props: NavbarProps) {

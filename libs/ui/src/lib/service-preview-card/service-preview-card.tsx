@@ -10,9 +10,10 @@ export interface ServicePreviewCardProps {
 }
 
 const StyledServicePreviewCard = styled.div<Partial<ServicePreviewCardProps>>`
+  background-size: cover;
   background-color: ${({ theme }) => theme.colors.gray};
   background-image: url(${props => props.thumbnail});
-  background-size: 100%;
+  /* background-size: 100%; */
   background-blend-mode: overlay;
   background-position: center ;
   background-repeat: no-repeat ;
@@ -44,6 +45,7 @@ const StyledText = styled(Text)`
   width: 100%;
   left: 0;
   bottom: 20px;
+  letter-spacing: 4px;
 `
 
 export function ServicePreviewCard({
@@ -54,7 +56,7 @@ export function ServicePreviewCard({
     <Link href={`/services/${serviceName}`}>
       <a>
         <StyledServicePreviewCard thumbnail={transformCloundinaryImage(thumbnail, 300)}>
-          <StyledText color="white" fontSize="subtitle">
+          <StyledText color="white" fontSize="h5" component="label">
             {serviceName}
           </StyledText>
         </StyledServicePreviewCard>

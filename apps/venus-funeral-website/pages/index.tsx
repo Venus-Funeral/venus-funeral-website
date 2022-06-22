@@ -28,7 +28,7 @@ const CardWrapper = styled.div`
 export function Index() {
   return (
     <PageLayout
-      title="金星殯儀"
+      // title="金星殯儀"
       description="金星殯儀"
     >
       <Container>

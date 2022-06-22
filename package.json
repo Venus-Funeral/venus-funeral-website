@@ -6,7 +6,9 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "genc": "nx g @nrwl/react:component --project=ui --export"
+    "dev": "nx serve venus-funeral-website",
+    "genc": "nx g @nrwl/react:component --project=ui --export",
+    "refresh": "yarn run build venus-funeral-website && yarn run nx run venus-funeral-website:export"
   },
   "private": true,
   "dependencies": {
@@ -17,6 +19,7 @@
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
     "react-is": "18.1.0",
+    "react-photo-gallery": "^8.0.0",
     "react-reveal": "^1.2.2",
     "regenerator-runtime": "0.13.7",
     "styled-components": "5.3.5",

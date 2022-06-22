@@ -16,6 +16,10 @@ const StyledBannerWrapper = styled.div`
   position: relative;
   flex-direction: column-reverse;
   /* justify-content: flex-end; */
+
+  /* & .react-reveal {
+    height: 100%;
+  } */
   
   ${({ theme }) => theme.breakPoints.desktop} {
     justify-content: flex-end;
@@ -55,6 +59,10 @@ const BannerImage = styled.img`
 
 const ImageWrapper = styled.div`
   width: 100%;
+
+  & .react-reveal {
+    height: 100%;
+  }
 
   ${({ theme }) => theme.breakPoints.desktop} {
     width: 75%;

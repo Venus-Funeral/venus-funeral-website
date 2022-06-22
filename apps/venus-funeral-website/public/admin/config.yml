@@ -23,6 +23,7 @@ collections:
               - { label: "服務名稱", name: "serviceName", widget: "string" }
               - { label: "預覽相片", name: "thumbnail", widget: "image" }
               - { label: "服務相片", name: "serviceImage", widget: "image", required: false }
+              - { label: "次要服務相片", name: "secondaryServiceImage", widget: "image", required: false }
               - { label: "價格至", name: "priceTo", widget: "number", required: false }
               - { label: "價格由", name: "priceFrom", widget: "number", required: false }
               - { label: "服務詳情", name: "serviceDescription", widget: "text", required: false }
@@ -72,8 +73,13 @@ collections:
         name: "flowerService"
         file: "content/flowerService.md"
         fields:
+          - { label: "Banner 相片", name: "bannerImage", widget: "image" }
           - { label: "描述", name: "description", widget: "text" }
-          - { label: "服務重點", name: "serviceKeyPoints", widget: "list", default: [""] }
+          - label: "服務重點"
+            name: "serviceKeyPoints"
+            widget: "list"
+            fields:
+              - { label: "重點", name: "keyPoint", widget: "string" }
           - label: "花牌相片"
             name: "services"
             widget: list

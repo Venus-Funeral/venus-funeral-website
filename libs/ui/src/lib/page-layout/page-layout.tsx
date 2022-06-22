@@ -26,7 +26,7 @@ const WhatsappFab = styled.a`
     fill: white;
   }
 
-  ${({theme}) => theme.breakPoints.desktop} {
+  ${({ theme }) => theme.breakPoints.desktop} {
     right: 32px;
     bottom: 60px;
   }
@@ -37,28 +37,31 @@ export function PageLayout({
   description,
   children
 }: PropsWithChildren<PageLayoutProps>) {
+  const pageTitle = `${title ? title + ' | ' : ''}金星殯儀`
+
   return (
     <>
       <Head>
+        <title>{pageTitle}</title>
         <meta name="keywords" content="" />
         <meta name="description" content={description} />
         {/*Facebook SEO*/}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
         {/* <meta property="og:image" content={thumbnail} /> */}
 
         {/*Twitter SEO*/}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@chainsify" />
-        <meta name="twitter:title" content={title} />
+        <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
         {/* <meta name="twitter:image" content={thumbnail} /> */}
       </Head>
       <Navbar />
       {children}
       <WhatsappFab>
-        <ImWhatsapp color="#fff" fontSize={42}/>
+        <ImWhatsapp color="#fff" fontSize={42} />
       </WhatsappFab>
     </>
   );
