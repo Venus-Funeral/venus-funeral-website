@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 import Navbar from '../navbar/navbar';
-import { ImWhatsapp } from 'react-icons/im'
+import { ImWhatsapp } from 'react-icons/im';
+import { Footer } from '@venus-funeral/ui';
 
 /* eslint-disable-next-line */
 export interface PageLayoutProps {
@@ -12,7 +13,7 @@ export interface PageLayoutProps {
 
 const WhatsappFab = styled.a`
   position: fixed;
-  background: #23CE63;
+  background: #23ce63;
   right: 24px;
   bottom: 24px;
   color: white;
@@ -30,12 +31,12 @@ const WhatsappFab = styled.a`
     right: 32px;
     bottom: 60px;
   }
-`
+`;
 
 export function PageLayout({
   title,
   description,
-  children
+  children,
 }: PropsWithChildren<PageLayoutProps>) {
   const pageTitle = `${title ? title + ' | ' : ''}金星殯儀`
 
@@ -63,6 +64,7 @@ export function PageLayout({
       <WhatsappFab>
         <ImWhatsapp color="#fff" fontSize={42} />
       </WhatsappFab>
+      <Footer />
     </>
   );
 }

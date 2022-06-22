@@ -1,4 +1,4 @@
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
   fontSize: {
@@ -19,13 +19,15 @@ export const theme: DefaultTheme = {
     white: '#fff',
     orange: '	#FF8C00',
     lightgold: '#f3ae5e',
+    khaki: '#E0D8B0',
+    lightkhaki: '#FCFFE7',
     inherit: 'inherit',
     default: '#1B3643',
   },
   breakPoints: {
     mobile: '@media only screen and (max-width: 599px)',
     tablet: '@media only screen and (min-width: 600px)',
-    desktop: '@media only screen and (min-width: 1200px)'
+    desktop: '@media only screen and (min-width: 1200px)',
   },
   maxWidth: '1240px',
-}
+};

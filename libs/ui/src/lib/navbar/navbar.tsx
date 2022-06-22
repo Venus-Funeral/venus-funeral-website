@@ -4,7 +4,7 @@ import Container from '../container/container';
 import Logo from '../logo/logo';
 
 /* eslint-disable-next-line */
-export interface NavbarProps { }
+export interface NavbarProps {}
 
 const StyledNavbar = styled.nav`
   background: white;
@@ -20,14 +20,14 @@ const StyledContainer = styled(Container)`
   align-items: center;
   justify-content: space-between;
   display: flex;
-`
+`;
 
 const LinksWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 24px;
-`
+`;
 
 const StyledLink = styled.a`
   color: ${({ theme }) => theme.colors.gray};
@@ -44,7 +44,7 @@ const StyledLink = styled.a`
     width: 0%;
     content: '.';
     color: transparent;
-    background: #B48650;
+    background: #b48650;
     height: 3px;
     transition: 200ms ease;
     border-radius: 4px;
@@ -53,13 +53,13 @@ const StyledLink = styled.a`
   &:hover {
     color: ${({ theme }) => theme.colors.gold};
     transition: 200ms ease;
-    
+
     &:after {
       transition: 200ms ease;
       width: 100%;
     }
   }
-`
+`;
 
 const navItems = [
   { label: '關於我們', href: '/about' },
@@ -77,15 +77,12 @@ export function Navbar(props: NavbarProps) {
           </a>
         </Link>
         <LinksWrapper>
-          {
-            navItems && navItems.map(({ label, href }) => (
+          {navItems &&
+            navItems.map(({ label, href }) => (
               <Link href={href} key={href} passHref>
-                <StyledLink >
-                  {label}
-                </StyledLink>
+                <StyledLink>{label}</StyledLink>
               </Link>
-            ))
-          }
+            ))}
         </LinksWrapper>
       </StyledContainer>
     </StyledNavbar>

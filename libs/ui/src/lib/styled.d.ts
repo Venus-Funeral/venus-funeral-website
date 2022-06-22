@@ -9,6 +9,8 @@ declare module 'styled-components' {
       orange: string;
       white: string;
       lightgold: string;
+      khaki: string;
+      lightkhaki: string;
       inherit: string;
       default: string;
     };
@@ -27,7 +29,7 @@ declare module 'styled-components' {
       mobile: string;
       tablet: string;
       desktop: string;
-    },
+    };
     maxWidth: string;
   }
 }
