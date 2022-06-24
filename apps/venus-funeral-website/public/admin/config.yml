@@ -86,6 +86,7 @@ collections:
             fields:
               - { label: "花牌名稱", name: "flowerName", widget: "string" }
               - { label: "相片", name: "thumbnail", widget: "image" }
+              - { label: "價格", name: "price", widget: "number" }
               - { label: "等級", name: "tier", widget: "select", options: ["A", "B", "C", "D", "E", "F"] }
       - label: "服務流程"
         name: "processes"

@@ -9,14 +9,18 @@ serviceKeyPoints:
 services:
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1654467211/JZB6107_1200x1200-2670961371_xlc09q.jpg
     flowerName: Flower 1
+    price: 312
     tier: A
   - flowerName: Flower 2
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1654467165/978-3247580448_rupcyo.jpg
+    price: 500
     tier: A
   - flowerName: Flower 3
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1654466969/DSC09549_elnzl8.jpg
+    price: 700
     tier: B
   - flowerName: Flower 4
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1654466846/5-2613943998_ftvy2k.jpg
+    price: 1000
     tier: C
 ---
