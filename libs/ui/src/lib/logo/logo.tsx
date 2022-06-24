@@ -10,10 +10,12 @@ const StyledLogo = styled.div`
   /* height: 100%; */
   width: 200px;
   height: 96px;
+  display: flex;
+  align-items: center;
 
   svg {
     width: auto;
-    height: 96px;
+    height: 64px;
   }
 
   ${({ theme }) => theme.breakPoints.tablet} {

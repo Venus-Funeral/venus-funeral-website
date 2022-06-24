@@ -4,6 +4,8 @@ import { PageLayout, Navbar, ServicePreviewCard, Container } from '@venus-funera
 import { attributes, react as Content } from '../../../content/serviceOverviews.md'
 import TestimonySlides from '../components/TestimonySlides';
 import SellingPointsSection from '../components/SellingPointsSection';
+import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 
 const { services } = attributes
 
@@ -11,8 +13,9 @@ const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 6px;
-  grid-row-gap: 6px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin-bottom: 140px;
 
   ${({ theme }) => theme.breakPoints.tablet} {
     grid-template-columns: repeat(3, 1fr);
@@ -28,7 +31,6 @@ const CardWrapper = styled.div`
 export function Index() {
   return (
     <PageLayout
-      // title="金星殯儀"
       description="金星殯儀"
     >
       <Container>

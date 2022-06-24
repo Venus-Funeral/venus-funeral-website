@@ -10,31 +10,31 @@ export interface ServicePreviewCardProps {
 }
 
 const StyledServicePreviewCard = styled.div<Partial<ServicePreviewCardProps>>`
-  background-size: cover;
-  background-color: ${({ theme }) => theme.colors.gray};
+  background-size: auto;
+  background-color: #5a5a5a;
   background-image: url(${props => props.thumbnail});
-  /* background-size: 100%; */
   background-blend-mode: overlay;
   background-position: center ;
   background-repeat: no-repeat ;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   position: relative;
   width: 100%;
   transition: 300ms ease-out;
   height: 150px;
 
-  &:hover {
-    background-size: 110%;
-    transition: 300ms ease-out;
-  }
-
   ${({ theme }) => theme.breakPoints.desktop} {
-    height: 150px;
+    height: 160px;
   }
 
   ${({ theme }) => theme.breakPoints.tablet} {
-    height: 160px;
+    height: 130px;
+    background-size: 100%;
+
+    &:hover {
+    background-size: 120%;
+    transition: 300ms ease-out;
+  }
   }
 `;
 
@@ -46,6 +46,7 @@ const StyledText = styled(Text)`
   left: 0;
   bottom: 20px;
   letter-spacing: 4px;
+  pointer-events: none;
 `
 
 export function ServicePreviewCard({

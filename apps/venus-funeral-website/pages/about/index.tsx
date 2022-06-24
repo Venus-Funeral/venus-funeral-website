@@ -203,7 +203,7 @@ const AboutusPage: NextPage = () => {
           <OwnerContainer>
             <OwnerImage src="/owner.jpg" alt="Owner Image"/>
             <OwnerTextWrapper>
-              <StyledHeader disableUnderline component="h6" fontSize="h3" color="inherit">Title</StyledHeader>
+              <StyledHeader disableUnderline component="h6" fontSize="h3" color="inherit">創辦人</StyledHeader>
               <Text component="p" fontSize="body1" color="inherit">
                 {founderIntro}
               </Text>

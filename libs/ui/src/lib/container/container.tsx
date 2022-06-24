@@ -4,6 +4,7 @@ import styled from 'styled-components';
 /* eslint-disable-next-line */
 export interface ContainerProps {
   className?: string;
+  id?: string;
 }
 
 const StyledContainer = styled.div`
@@ -15,9 +16,10 @@ const StyledContainer = styled.div`
 export function Container({
   children,
   className,
+  id,
 }: PropsWithChildren<ContainerProps>) {
   return (
-    <StyledContainer className={className}>
+    <StyledContainer className={className} id={id}>
       {children}
     </StyledContainer>
   );

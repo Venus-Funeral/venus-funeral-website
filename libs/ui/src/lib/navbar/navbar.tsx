@@ -30,7 +30,7 @@ const LinksWrapper = styled.div`
 `;
 
 const StyledLink = styled.a`
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${({ theme }) => theme.colors.default};
   font-size: ${({ theme }) => theme.fontSize.body1};
   position: relative;
   transition: 200ms ease;

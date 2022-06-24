@@ -70,8 +70,8 @@ export function Footer(props: FooterProps) {
           <LinksWrapper>
             <h4>金星殯儀</h4>
             {navItems_first &&
-              navItems_first.map(({ label, href }) => (
-                <Link href={href} key={href} passHref>
+              navItems_first.map(({ label, href }, idx) => (
+                <Link href={href} key={idx} passHref>
                   <a>{label}</a>
                 </Link>
               ))}
@@ -79,8 +79,8 @@ export function Footer(props: FooterProps) {
           <LinksWrapper>
             <h4>關注我們</h4>
             {navItems_second &&
-              navItems_second.map(({ label, href }) => (
-                <Link href={href} key={href} passHref>
+              navItems_second.map(({ label, href }, idx) => (
+                <Link href={href} key={idx} passHref>
                   <a>{label}</a>
                 </Link>
               ))}

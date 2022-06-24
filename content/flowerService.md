@@ -23,4 +23,20 @@ services:
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1654466846/5-2613943998_ftvy2k.jpg
     price: 1000
     tier: C
+  - flowerName: Flower 5
+    thumbnail: https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg
+    price: 1000
+    tier: F
+  - flowerName: Flower 5
+    thumbnail: https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg
+    price: 1000
+    tier: F
+  - flowerName: Flower 5
+    thumbnail: https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg
+    price: 1000
+    tier: F
+  - flowerName: Flower 5
+    thumbnail: https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg
+    price: 1000
+    tier: F
 ---

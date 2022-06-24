@@ -1,7 +1,7 @@
 <svg
    xmlns="http://www.w3.org/2000/svg"
-   viewBox="0 0 1122.52 793.70667"
-   height="793.70667"
+   viewBox="0 -250 1122.52 293.70667"
+   height="293.70667"
    width="1122.52"
    id="svg2"
    version="1.1"><defs
@@ -10,7 +10,7 @@
        clipPathUnits="userSpaceOnUse"><path
          id="path16"
          d="M 0,595.28 H 841.89 V 0 H 0 Z" /></clipPath></defs><g
-     transform="matrix(1.3333333,0,0,-1.3333333,0,793.70667)"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,293.70667)"
      id="g10"><g
        id="g12"><g
          clip-path="url(#clipPath18)"

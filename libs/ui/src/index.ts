@@ -1,3 +1,6 @@
+export * from './lib/cta-banner/cta-banner';
+export * from './lib/full-width-banner/full-width-banner';
+export * from './lib/tabs/tabs';
 export * from './lib/footer/footer';
 export * from './lib/icon-button/icon-button';
 export * from './lib/text-banner/text-banner';

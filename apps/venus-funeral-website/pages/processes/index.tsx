@@ -42,7 +42,7 @@ const StepWrapper = styled.li<{ step: number }>`
     left: 0;
     position: absolute;
     width: 42px;
-    color: ${({theme}) => theme.colors.gray};
+    color: ${({theme}) => theme.colors.default};
   }
 
   &:not(:last-child):after {

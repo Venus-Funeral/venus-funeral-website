@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { Container, PageLayout, Text, TextBanner, transformCloundinaryImage } from "@venus-funeral/ui"
+import { useCallback, useEffect, useState } from "react";
+import { Container, PageLayout, Text, TextBanner, transformCloundinaryImage, Tabs, Tab, FullWidthBanner, Button } from "@venus-funeral/ui"
 import { NextPage } from "next/types"
 import styled from 'styled-components'
-import Gallery from "react-photo-gallery"
+import FlowerGridGallery from '../../components/FlowerGridGallery'
 // import optional lightbox plugins
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -11,21 +12,25 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-
 import { attributes } from '../../../../content/flowerService.md'
-import { useState } from "react";
+
+const {
+  bannerImage,
+  description,
+  serviceKeyPoints,
+  services,
+} = attributes
 
 const KeyPointNode = styled.div`
 ${({ theme }) => `
-  border: 1px solid ${theme.colors.lightgray};
-  border-radius: 9999px;
-  width: 200px;
-  height: 200px;
+  background: ${theme.colors.lightgray};
+  border-radius: 8px;
+  height: 50px;
+  width: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
   letter-spacing: 1.05px;
-  
 `}
 `
 
@@ -37,44 +42,40 @@ const KeyPointNodesWrapper = styled.div`
   gap: 12px;
 `
 
-const FlowerImageCard = styled.div`
-  display: inline-block;
-`
-
-const FlowerImage = styled.img``
-
-const FlowerImageDescription = styled.div`
+const BannerTextWrapper = styled.div`
+  align-items: center;
+  color: inherit;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  max-width: 300px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 24px;
+  }
+
+  p {
+    letter-spacing: 1.05px;
+  }
+
+  a {
+    margin-top: 48px;
+  }
+
+  ${({theme}) => theme.breakPoints.tablet} {
+    max-width: 600px;
+    padding: 24px;
+
+  }
 `
-
-const {
-  bannerImage,
-  description,
-  serviceKeyPoints,
-  services,
-} = attributes
-
-const photoData = services.map(({
-  thumbnail,
-  flowerName,
-  tier,
-  price
-}) => ({
-  src: thumbnail,
-  width: 3,
-  height: 2,
-  price,
-  tier,
-  flowerName
-}))
 
 const breakpoints = [600, 1200]
 
 const photos = services.map(({
   thumbnail,
-  floweName,
+  flowerName,
   tier,
+  price,
 }, index) => {
   const width = 1920;
   const height = 1080;
@@ -83,23 +84,32 @@ const photos = services.map(({
     key: `${index}`,
     width,
     height,
-    hahah: '123',
+    tier,
+    flowerName,
+    price,
     images: breakpoints.map((breakpoint) => {
       const breakpointHeight = Math.round((height / width) * breakpoint);
       return {
         src: thumbnail,
         width: breakpoint,
         height: breakpointHeight,
-        hahah: 'ggg'
+        tier,
       };
     })
   };
 });
 
+const StyledTabs = styled(Tabs)`
+  scroll-margin-top: 100px;
+`
+
 const slides = photos.map(({
-  src, width, height, images
+  src, width, height, images, tier, flowerName, price
 }) => ({
   src,
+  tier,
+  flowerName,
+  price,
   aspectRatio: width / height,
   srcSet: images.map((image) => ({
     src: image.src,
@@ -107,45 +117,62 @@ const slides = photos.map(({
   })),
 }));
 
-const GalleryImage = (props: any) => {
-  const { index, left, top, key, photo, onClick } = props
-  const { flowerName, price, tier, ...photoProps } = photo
-  console.log(props)
-  return (
-    <FlowerImageCard>
-      <FlowerImage
-        alt={flowerName}
-        style={{ borderRadius: '12px' }}
-        key={key} {...photoProps}
-        onClick={onClick}
-      />
-      <FlowerImageDescription>
-        <Text>{flowerName}</Text>
-        <Text>${price}</Text>
-      </FlowerImageDescription>
-    </FlowerImageCard>
-  )
-}
+const tiers = ['全部(All)', 'A', 'B', 'C', 'E', 'F', 'G', 'H']
 
 const FlowerPage: NextPage = () => {
   const [index, setIndex] = useState(-1);
+  const [selectedTier, setSelectedTier] = useState(tiers[0])
+  const [displaySlides, setDisplaySlides] = useState(slides)
+  const [filteredImageSrcs, setFilteredImageSrcs] = useState<any[]>([])
 
-  const clickPhotoHandler = (event, { photo, index }) => {
-    console.log('clicked')
-    console.log('index', index)
+  useEffect(() => {
+    if (selectedTier === tiers[0]) {
+      setDisplaySlides(slides)
+    } else {
+      setDisplaySlides(slides.filter(it => it.tier === selectedTier))
+    }
+  }, [selectedTier])
+
+  useEffect(() => {
+    if (displaySlides) {
+      setFilteredImageSrcs(displaySlides.map(({ src, flowerName, price }) => ({ src, flowerName, price })))
+    }
+  }, [displaySlides])
+
+  const clickGallerImageHandler = useCallback((index: number) => {
     setIndex(index)
+  }, [])
+
+  const closeLightBoxHandler = () => {
+    setIndex(-1)
+  }
+
+  const changeSelectedTabHandler = (index: number) => {
+    const match = tiers.find((it, idx) => idx === index)
+
+    if (match) {
+      setSelectedTier(match)
+    }
   }
 
   return (
     <PageLayout
       title="帛事花牌"
     >
-      <TextBanner
+      <FullWidthBanner
+        imageSrc={transformCloundinaryImage(bannerImage, 891)}
+      >
+        <BannerTextWrapper>
+          <Text fontSize="h2" component="h1" color="inherit">帛事花牌</Text>
+          <Text fontSize="h6" component="p" color="inherit">{description}</Text>
+          <Button href="/flowers#list" variant="contained">查看花牌</Button>
+        </BannerTextWrapper>
+      </FullWidthBanner>
+      {/* <TextBanner
         header="帛事花牌"
         content={description}
         imageSrc={transformCloundinaryImage(bannerImage, 891)}
-      />
-
+      /> */}
       <KeyPointNodesWrapper>
         {
           serviceKeyPoints && serviceKeyPoints.map(({ keyPoint }, idx) => (
@@ -157,22 +184,25 @@ const FlowerPage: NextPage = () => {
           ))
         }
       </KeyPointNodesWrapper>
+      <StyledTabs onChange={changeSelectedTabHandler} id="list">
+        {
+          tiers && tiers.map((it, idx) => (
+            <Tab key={idx}>
+              {it}
+            </Tab>
+          ))
+        }
+      </StyledTabs>
+      <FlowerGridGallery
+        photoSrcs={filteredImageSrcs}
+        onClickImage={clickGallerImageHandler}
+      />
       <Container>
-        <Gallery
-          direction="column"
-          photos={photoData}
-          targetRowHeight={150}
-          renderImage={GalleryImage}
-          onClick={clickPhotoHandler as any}
-        // onClick={(event, photo, index) => setIndex(index)}
-        />
-
         <Lightbox
-          slides={slides}
+          slides={displaySlides}
           open={index >= 0}
           index={index}
-          close={() => setIndex(-1)}
-          // enable optional lightbox plugins
+          close={closeLightBoxHandler}
           plugins={[Fullscreen, Slideshow, Thumbnails]}
         />
       </Container>
