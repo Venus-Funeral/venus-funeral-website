@@ -1,3 +1,4 @@
+export * from './lib/mobile-menu/mobile-menu';
 export * from './lib/cta-banner/cta-banner';
 export * from './lib/full-width-banner/full-width-banner';
 export * from './lib/tabs/tabs';

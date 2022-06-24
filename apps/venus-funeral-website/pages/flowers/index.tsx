@@ -37,9 +37,15 @@ ${({ theme }) => `
 const KeyPointNodesWrapper = styled.div`
   align-items: center;
   display: flex;
-  margin: 64px 0;
+  margin: 16px 0 64px;
   justify-content: center;
   gap: 12px;
+  flex-direction: column;
+
+  ${({theme}) => theme.breakPoints.desktop} {
+    flex-direction: row;
+    margin: 64px 0;
+  }
 `
 
 const BannerTextWrapper = styled.div`
@@ -47,8 +53,8 @@ const BannerTextWrapper = styled.div`
   color: inherit;
   display: flex;
   flex-direction: column;
-  max-width: 300px;
   text-align: center;
+  padding: 24px;
 
   h1 {
     margin-bottom: 24px;
@@ -65,7 +71,7 @@ const BannerTextWrapper = styled.div`
   ${({theme}) => theme.breakPoints.tablet} {
     max-width: 600px;
     padding: 24px;
-
+    max-width: 500px;
   }
 `
 
@@ -177,7 +183,7 @@ const FlowerPage: NextPage = () => {
         {
           serviceKeyPoints && serviceKeyPoints.map(({ keyPoint }, idx) => (
             <KeyPointNode key={idx}>
-              <Text fontSize="body1" bold>
+              <Text fontSize="body1" color="default" bold>
                 {keyPoint}
               </Text>
             </KeyPointNode>

@@ -55,6 +55,11 @@ const BannerImage = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  max-height: 400px;
+  
+  ${({ theme }) => theme.breakPoints.desktop} {
+    max-height: unset;
+  }
 `
 
 const ImageWrapper = styled.div`

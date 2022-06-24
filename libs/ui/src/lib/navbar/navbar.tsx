@@ -2,9 +2,10 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Container from '../container/container';
 import Logo from '../logo/logo';
+import MobileMenu from '../mobile-menu/mobile-menu';
 
 /* eslint-disable-next-line */
-export interface NavbarProps {}
+export interface NavbarProps { }
 
 const StyledNavbar = styled.nav`
   background: white;
@@ -20,13 +21,18 @@ const StyledContainer = styled(Container)`
   align-items: center;
   justify-content: space-between;
   display: flex;
+  background: white;
 `;
 
 const LinksWrapper = styled.div`
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: flex-end;
   gap: 24px;
+
+  ${({ theme }) => theme.breakPoints.tablet} {
+    display: flex;
+  }
 `;
 
 const StyledLink = styled.a`
@@ -61,7 +67,7 @@ const StyledLink = styled.a`
   }
 `;
 
-const navItems = [
+export const navItems = [
   { label: '關於我們', href: '/about' },
   { label: '服務流程', href: '/processes' },
   { label: '帛事花牌', href: '/flowers' },
@@ -72,18 +78,21 @@ export function Navbar(props: NavbarProps) {
     <StyledNavbar>
       <StyledContainer>
         <Link href="/">
-          <a>
+          <a style={{zIndex: 100}}>
             <Logo />
           </a>
         </Link>
         <LinksWrapper>
-          {navItems &&
+          {
+            navItems &&
             navItems.map(({ label, href }) => (
               <Link href={href} key={href} passHref>
                 <StyledLink>{label}</StyledLink>
               </Link>
-            ))}
+            ))
+          }
         </LinksWrapper>
+        <MobileMenu />
       </StyledContainer>
     </StyledNavbar>
   );

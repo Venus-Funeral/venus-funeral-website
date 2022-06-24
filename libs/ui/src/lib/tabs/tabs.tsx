@@ -22,11 +22,17 @@ const StyledTabs = styled.div`
   justify-content: center;
   align-items: center;
   padding-bottom: 12px;
+  flex-direction: column;
+
+  ${({theme}) => theme.breakPoints.tablet} {
+    flex-direction: row;
+  }
 `;
 
 const StyledTab = styled.div<Partial<TabProps>>`
   position: relative;
   cursor: pointer;
+  margin-bottom: 8px;
 
   &:hover {
     span {
@@ -62,8 +68,12 @@ const StyledTab = styled.div<Partial<TabProps>>`
     ) 
   }
 
-  &:not(:last-child) {
-    margin-right: 30px;
+  ${({theme}) => theme.breakPoints.tablet} {
+    margin-bottom: 0;
+    
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 `
 
@@ -90,7 +100,6 @@ export function Tabs({
   id,
 }: PropsWithChildren<TabsProps>) {
   const [selectedTab, setSelectedTab] = useState(0)
-  console.log('selectedTab',selectedTab)
   const clickTabHandler = (index: number) => () => {
     setSelectedTab(index)
 
