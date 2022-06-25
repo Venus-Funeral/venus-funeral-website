@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Container from '../container/container';
 import Logo from '../logo/logo';
@@ -7,8 +8,10 @@ import MobileMenu from '../mobile-menu/mobile-menu';
 /* eslint-disable-next-line */
 export interface NavbarProps { }
 
-const StyledNavbar = styled.nav`
+const StyledNavbar = styled.nav<{showBorder?: boolean}>`
   background: white;
+  border-bottom: ${({showBorder}) => showBorder ? '1px solid #EBEBEB' : '1px solid white'};
+  transition: 200ms ease;
   width: 100%;
   height: 96px;
   position: sticky;
@@ -22,6 +25,7 @@ const StyledContainer = styled(Container)`
   justify-content: space-between;
   display: flex;
   background: white;
+  max-height: 95px;
 `;
 
 const LinksWrapper = styled.div`
@@ -74,11 +78,34 @@ export const navItems = [
 ]
 
 export function Navbar(props: NavbarProps) {
+  const [showBorder, setShowBorder] = useState(false)
+  console.log('showBorder',showBorder)
+  useEffect(() => {
+    const handleScroll = () => {
+      // console.log('window.scrollY', window.scrollY)
+      if (window.scrollY > 10) {
+        setShowBorder(true)
+      } else {
+        setShowBorder(false)
+      }
+    }
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', handleScroll)
+      }
+    }
+  }, [])
+  
   return (
-    <StyledNavbar>
+    <StyledNavbar showBorder={showBorder}>
       <StyledContainer>
         <Link href="/">
-          <a style={{zIndex: 100}}>
+          <a style={{ zIndex: 100 }}>
             <Logo />
           </a>
         </Link>

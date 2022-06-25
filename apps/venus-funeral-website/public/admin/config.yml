@@ -104,10 +104,11 @@ collections:
           - { label: "描述", name: "description", widget: "text" }
           - { label: "地址", name: "address", widget: "string" }
           - { label: "Google Map Url", name: "googleMapUrl", widget: "string", required: false }
-          - { label: "電郵地址", name: "phoneNumber", widget: "string", required: false }
+          - { label: "電話", name: "phoneNumber", widget: "string", required: false }
+          - { label: "Whatsapp", name: "whatsapp", widget: "number", required: false }
           - { label: "電郵地址", name: "email", widget: "string", required: false }
           - { label: "Facebook Link", name: "facebookLink", widget: "string", required: false }
-          - { label: "Instagram Link", name: "instagramLink", widget: "string", required: false }      
+          - { label: "Instagram Link", name: "instagramLink", widget: "string", required: false }
       - label: "客戶見證"
         name: "testimonies"
         file: "content/testimonies.md"

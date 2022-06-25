@@ -174,11 +174,6 @@ const FlowerPage: NextPage = () => {
           <Button href="/flowers#list" variant="contained">查看花牌</Button>
         </BannerTextWrapper>
       </FullWidthBanner>
-      {/* <TextBanner
-        header="帛事花牌"
-        content={description}
-        imageSrc={transformCloundinaryImage(bannerImage, 891)}
-      /> */}
       <KeyPointNodesWrapper>
         {
           serviceKeyPoints && serviceKeyPoints.map(({ keyPoint }, idx) => (

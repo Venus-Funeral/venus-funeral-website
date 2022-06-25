@@ -61,7 +61,7 @@ export function PageLayout({
       </Head>
       <Navbar />
       {children}
-      <WhatsappFab>
+      <WhatsappFab href="whatsapp://send?phone=3464478983">
         <ImWhatsapp color="#fff" fontSize={42} />
       </WhatsappFab>
       <Footer />
