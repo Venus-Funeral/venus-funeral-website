@@ -3,10 +3,11 @@ import { PropsWithChildren } from 'react';
 import Link from 'next/link';
 
 /* eslint-disable-next-line */
-export interface ButtonProps {
+export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   className?: string;
   href: string;
   variant?: 'contained' | 'outlined';
+  isButton?: boolean;
 }
 
 const StyledButton = styled.a<Partial<ButtonProps>>`
@@ -22,22 +23,23 @@ const StyledButton = styled.a<Partial<ButtonProps>>`
   cursor: pointer;
 
   ${({ variant, theme }) =>
-    (variant === 'contained' && css`
-      border: 1px solid ${theme.colors.default};
-      color: white;
-      background: ${theme.colors.default};
-    `) ||
-    (variant === 'outlined' && css`
-      border: 1px solid ${theme.colors.default};
-      color: ${theme.colors.default};
-
-      &:hover {
+    (variant === 'contained' &&
+      css`
+        border: 1px solid ${theme.colors.default};
         color: white;
         background: ${theme.colors.default};
-        transition: 250ms ease;
-      }
-    `)
-  }
+      `) ||
+    (variant === 'outlined' &&
+      css`
+        border: 1px solid ${theme.colors.default};
+        color: ${theme.colors.default};
+
+        &:hover {
+          color: white;
+          background: ${theme.colors.default};
+          transition: 250ms ease;
+        }
+      `)}
 `;
 
 export function Button({
@@ -45,8 +47,14 @@ export function Button({
   className,
   href,
   variant = 'outlined',
+  isButton,
+  ...buttonProps
 }: PropsWithChildren<ButtonProps>) {
-  return (
+  return isButton ? (
+    <StyledButton className={className} variant={variant} {...buttonProps} as="button">
+      {children}
+    </StyledButton>
+  ) : (
     <Link href={href}>
       <StyledButton className={className} variant={variant}>
         {children}

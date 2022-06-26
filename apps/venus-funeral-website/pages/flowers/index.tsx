@@ -164,6 +164,7 @@ const FlowerPage: NextPage = () => {
   return (
     <PageLayout
       title="帛事花牌"
+      description={description}
     >
       <FullWidthBanner
         imageSrc={transformCloundinaryImage(bannerImage, 891)}

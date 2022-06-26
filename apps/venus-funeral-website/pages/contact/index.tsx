@@ -13,10 +13,14 @@ import {
   MdOutlineFacebook,
 } from 'react-icons/md';
 import { ReactComponent as AvatarIcon } from '../../public/avatar1.svg';
+import ContactForm from '../../components/ContactForm';
 
 const ContactContainer = styled(Container)`
-  height: 600px;
   position: relative;
+
+  ${({ theme }) => theme.breakPoints.desktop} {
+    height: 600px;
+  }
 `;
 
 const ContactBgImage = styled.img`
@@ -31,7 +35,7 @@ const ContactBgImage = styled.img`
   border-radius: 12px;
   display: none;
 
-  ${({ theme }) => theme.breakPoints.tablet} {
+  ${({ theme }) => theme.breakPoints.desktop} {
     display: block;
   }
 `;
@@ -46,13 +50,13 @@ const ContactDetailsCardContainer = styled.div`
   flex-direction: column;
   gap: 24px;
 
-  ${({ theme }) => theme.breakPoints.tablet} {
+  ${({ theme }) => theme.breakPoints.desktop} {
     flex-direction: row;
   }
 `;
 
 const ContactDetailsCard = styled.div`
-  box-shadow: 0 1px 6px 0 rgb(0 0 0 / 6%), 0 2px 32px 0 rgb(0 0 0 / 16%);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 20%);
   background-color: white;
   padding: 24px;
   height: 100%;
@@ -62,7 +66,7 @@ const ContactDetailsCard = styled.div`
   align-items: flex-start;
   border-radius: 12px;
 
-  ${({ theme }) => theme.breakPoints.tablet} {
+  ${({ theme }) => theme.breakPoints.desktop} {
     width: 40%;
     min-width: 300px;
     padding: 24px 48px;
@@ -130,8 +134,7 @@ export function Contact() {
               </ContactTextContainer>
             </ContactDetailsCard>
             <ContactDetailsCard>
-              <h1>For Form</h1>
-              <h1>Input1</h1>
+              <ContactForm />
             </ContactDetailsCard>
           </ContactDetailsCardContainer>
         </ContactDetail>

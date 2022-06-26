@@ -14,7 +14,7 @@ const { testimonies } = attributes;
 const Wrapper = styled.div<{ slideCount: number }>`
   background: ${({ theme }) => theme.colors.lightgold};
   /* margin: 0 auto; */
-  margin: 80px 0 0 0;
+  /* margin: 80px 0 0 0; */
   width: 100%;
   padding: 40px 0;
 
@@ -45,7 +45,7 @@ const Wrapper = styled.div<{ slideCount: number }>`
   }
 
   ${({ theme }) => theme.breakPoints.tablet} {
-    margin-top: 160px;
+    /* margin-top: 160px; */
   }
 `;
 

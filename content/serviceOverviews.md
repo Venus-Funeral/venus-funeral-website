@@ -74,8 +74,11 @@ services:
 sellPoints:
   - header: 一站式殯儀服務
     content: 金星殯儀提供全方位殯儀服務，包括在香港各大殯儀館為先人籌辦喪禮，協助先人家屬安排政府文件至撰寫訃文，並提供哀傷支援使先人家屬在喪禮後得到安慰。金星會照顧每一個微不足道的細節，使所有儀式順利進行。
+    image: https://res.cloudinary.com/djblau8at/image/upload/v1654469108/5_tdp160.jpg
   - header: 殯儀服務收費
     content: 金星的殯儀服務收費內容仔細透明。我們力求讓家屬們感受到亡者安詳離去，及使亡者的故事得以流傳，我們會按著家屬的需要及先人的個人特質籌辦個人化的喪禮。金星會根據您所選擇的殯儀服務及安排,清晰列明所需收費價格。
+    image: https://res.cloudinary.com/djblau8at/image/upload/v1654466911/pexels-ksenia-chernaya-8986709_jdxare.jpg
   - header: 免卻繁瑣程序
     content: 金星的殯儀服務可以令你免卻不少繁瑣的程序，我們會提供代辦領取死亡證、預約火化爐期、領取骨灰及安排骨灰龕位及其他善後服務等。所有文件為您妥善安排，令你安心。
+    image: https://res.cloudinary.com/djblau8at/image/upload/v1654469745/3.ARW_gkp6ra.jpg
 ---

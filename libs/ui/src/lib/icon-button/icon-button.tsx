@@ -7,6 +7,7 @@ export interface IconButtonProps {
   className?: string;
   color?: string;
   iconSize?: number;
+  backgroundColor?: string;
 }
 
 type ButtonProps = IconButtonProps & React.ComponentPropsWithoutRef<'button'> & {

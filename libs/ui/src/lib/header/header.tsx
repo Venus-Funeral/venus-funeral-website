@@ -22,7 +22,7 @@ const expand = keyframes`
 const StyledHeader = styled(Text) <{ disableUnderline?: boolean, whiteColor?: boolean; }>`
   margin-bottom: 0;
   position: relative;
-  margin-bottom: 52px;
+  margin-bottom: 80px;
   color: ${({whiteColor}) => whiteColor ? '#fff' : 'inherit'} !important;
 
   &:after {
