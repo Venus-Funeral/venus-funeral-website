@@ -51,7 +51,7 @@ const ContactDetailsCardContainer = styled.div`
 `;
 
 const ContactDetailsCard = styled.div`
-  box-shadow: 0 4px 12px 0 rgb(104 115 125 / 15%);
+  box-shadow: 0 1px 6px 0 rgb(0 0 0 / 6%), 0 2px 32px 0 rgb(0 0 0 / 16%);
   margin: 0 8px;
   background-color: white;
   padding: 24px 48px;
