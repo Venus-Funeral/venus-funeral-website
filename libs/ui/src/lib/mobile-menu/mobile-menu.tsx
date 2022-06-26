@@ -38,6 +38,7 @@ const MenuButton = styled.button<{ open?: boolean }>`
   align-items: center;
   font-size: 30px;
   color: ${({theme}) => theme.colors.default};
+  padding: 0;
 `
 
 const StyledLink = styled.a`
