@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 import Navbar from '../navbar/navbar';
 import { ImWhatsapp } from 'react-icons/im';
-import { Footer } from '@venus-funeral/ui';
+import Footer from '../footer/footer';
 
 /* eslint-disable-next-line */
 export interface PageLayoutProps {

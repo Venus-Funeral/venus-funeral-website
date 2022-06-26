@@ -28,8 +28,9 @@ interface StyledIconButtonIconProps {
 }
 
 const StyledIconButton = styled.button<StyledIconButtonIconProps>`
+  background: ${({theme}) => theme.colors.default};
   border-radius: 50px;
-  color: ${({ color }) => color || 'inherit'};
+  color: ${({ color }) => color || 'inherit'} !important;
   font-size: ${({ size }) => size || 40}px;
   padding: 4px;
   cursor: pointer;
