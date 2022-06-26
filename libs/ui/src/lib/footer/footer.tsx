@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import styled from 'styled-components';
 import Container from '../container/container';
 import Link from 'next/link';
@@ -9,35 +10,55 @@ export interface FooterProps {}
 const StyledFooter = styled.div`
   background: ${(props) => props.theme.colors.khaki};
   width: 100%;
-  height: 136px;
   color: white;
+  padding: 40px 0;
 `;
 
 const StyledContainer = styled(Container)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  /* margin: 0 0 12px 12px; */
+  
+  ${({ theme }) => theme.breakPoints.tablet} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const LinksContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 24px;
   align-items: start;
   justify-content: flex-start;
+
+  ${({ theme }) => theme.breakPoints.tablet} {
+    flex-direction: column;
+    gap: 8px;
+  }
 `;
 
 const LinksWrapper = styled.div`
   display: flex;
   align-items: start;
   gap: 16px;
+  flex-direction: column;
+
+  ${({ theme }) => theme.breakPoints.tablet} {
+    flex-direction: row;
+  }
 `;
 
 const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  margin-top: 24px;
+
+  ${({ theme }) => theme.breakPoints.tablet} {
+    align-items: flex-end;
+    margin-top: 0%;
+  }
 `;
 
 const BottomLogo = styled(Logo)`
@@ -51,15 +72,14 @@ const StyledP = styled.p`
   font-size: ${(props) => props.theme.fontSize.body2};
 `;
 
-const navItems_first = [
+const navItemsFirstRow = [
   { label: '關於我們', href: '/about' },
   { label: '服務流程', href: '/processes' },
   { label: '聯絡我們', href: '/' },
 ];
 
-const navItems_second = [
-  { label: 'Youtube', href: '/' },
-  { label: 'Instagram', href: '/' },
+const navItemsSecondRow = [
+  { label: 'Facebook', href: process.env['facebookUrl'] as string},
 ];
 
 export function Footer(props: FooterProps) {
@@ -69,8 +89,8 @@ export function Footer(props: FooterProps) {
         <LinksContainer>
           <LinksWrapper>
             <h4>金星殯儀</h4>
-            {navItems_first &&
-              navItems_first.map(({ label, href }, idx) => (
+            {navItemsFirstRow &&
+              navItemsFirstRow.map(({ label, href }, idx) => (
                 <Link href={href} key={idx} passHref>
                   <a>{label}</a>
                 </Link>
@@ -78,20 +98,21 @@ export function Footer(props: FooterProps) {
           </LinksWrapper>
           <LinksWrapper>
             <h4>關注我們</h4>
-            {navItems_second &&
-              navItems_second.map(({ label, href }, idx) => (
+            {navItemsSecondRow &&
+              navItemsSecondRow.map(({ label, href }, idx) => (
                 <Link href={href} key={idx} passHref>
-                  <a>{label}</a>
+                  <a target="_blank">{label}</a>
                 </Link>
               ))}
           </LinksWrapper>
         </LinksContainer>
         <LogoWrapper>
-          <a>
-            <BottomLogo />
-          </a>
+          <Link href="/">
+            <a>
+              <BottomLogo />
+            </a>
+          </Link>
           <StyledP>@2022 Venus Funeral</StyledP>
-          <StyledP>服務及條款</StyledP>
         </LogoWrapper>
       </StyledContainer>
     </StyledFooter>

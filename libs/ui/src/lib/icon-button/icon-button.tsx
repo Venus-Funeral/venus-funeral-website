@@ -28,12 +28,17 @@ interface StyledIconButtonIconProps {
 }
 
 const StyledIconButton = styled.button<StyledIconButtonIconProps>`
-  background: ${({theme}) => theme.colors.default};
+  background: ${({theme}) => theme.colors.khaki};
   border-radius: 50px;
-  color: ${({ color }) => color || 'inherit'} !important;
-  font-size: ${({ size }) => size || 40}px;
+  width: 45px;
+  height: 45px;
+  color: ${({ color }) => color || 'white'} !important;
+  font-size: ${({ size }) => size || 28}px;
   padding: 4px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export function IconButton({
@@ -51,6 +56,7 @@ export function IconButton({
           className={className}
           as="a"
           {...props}
+          
         >
           {children}
         </StyledIconButton>

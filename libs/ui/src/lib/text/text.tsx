@@ -17,7 +17,7 @@ const createSc = ({
 }: Exclude<Required<TextProps>, 'className'>) => styled(component)`
   font-size: ${({ theme }) => theme.fontSize[fontSize]};
   color: ${({ theme }) => color !== '#222' ? theme.colors[color] : color};
-  font-weight: ${bold ? 'bold' : 'inherit'};
+  font-weight: ${bold ? 'bold' : 0};
 `
 
 export function Text({

@@ -4,10 +4,8 @@ import { PageLayout, Navbar, ServicePreviewCard, Container } from '@venus-funera
 import { attributes, react as Content } from '../../../content/serviceOverviews.md'
 import TestimonySlides from '../components/TestimonySlides';
 import SellingPointsSection from '../components/SellingPointsSection';
-import Fade from 'react-reveal/Fade';
-import Slide from 'react-reveal/Slide';
 
-const { services } = attributes
+const { services, sellPoints } = attributes
 
 const CardWrapper = styled.div`
   display: grid;
@@ -31,7 +29,7 @@ const CardWrapper = styled.div`
 export function Index() {
   return (
     <PageLayout
-      description="金星殯儀"
+      description={sellPoints[0].content}
     >
       <Container>
         <CardWrapper>
