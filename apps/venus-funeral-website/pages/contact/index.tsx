@@ -3,8 +3,6 @@ import {
   Header,
   PageLayout,
   Text,
-  TextBanner,
-  theme,
 } from '@venus-funeral/ui';
 import styled from 'styled-components';
 import {
@@ -17,8 +15,9 @@ import ContactForm from '../../components/ContactForm';
 
 const ContactContainer = styled(Container)`
   position: relative;
-
+  
   ${({ theme }) => theme.breakPoints.desktop} {
+    margin-bottom: 120px;
     height: 600px;
   }
 `;

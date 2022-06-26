@@ -11,6 +11,7 @@ interface FlowerGridGalleryProps {
   onClickImage: (index: number) => void;
 }
 
+
 const Wrapper = styled(Container)`
   margin-top: 32px;
   min-height: 400px;
@@ -37,6 +38,7 @@ const FlowerDescription = styled.div`
   align-items: center;
 `;
 
+const internationalNumberFormat = new Intl.NumberFormat('en-US')
 
 const FlowerGridGallery: React.FC<FlowerGridGalleryProps> = React.memo(
   ({
@@ -60,7 +62,7 @@ const FlowerGridGallery: React.FC<FlowerGridGalleryProps> = React.memo(
                   <img src={it.src} key={idx} onClick={clickImageHandler(idx)} />
                   <FlowerDescription>
                     <Text color="default">{it.flowerName}</Text>
-                    <Text color="default">${it.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</Text>
+                    <Text color="default">${internationalNumberFormat.format(it.price)}</Text>
                   </FlowerDescription>
                 </FlowerCard>
               )

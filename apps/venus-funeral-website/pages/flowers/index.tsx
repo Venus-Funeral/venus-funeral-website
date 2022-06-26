@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useCallback, useEffect, useState } from "react";
-import { Container, PageLayout, Text, TextBanner, transformCloundinaryImage, Tabs, Tab, FullWidthBanner, Button } from "@venus-funeral/ui"
+import { Container, PageLayout, Text, transformCloundinaryImage, Tabs, Tab, FullWidthBanner, Button } from "@venus-funeral/ui"
 import { NextPage } from "next/types"
 import styled from 'styled-components'
 import FlowerGridGallery from '../../components/FlowerGridGallery'
