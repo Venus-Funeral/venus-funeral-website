@@ -17,7 +17,7 @@ const StyledContainer = styled(Container)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   /* margin: 0 0 12px 12px; */
 `;
 
@@ -91,7 +91,6 @@ export function Footer(props: FooterProps) {
             <BottomLogo />
           </a>
           <StyledP>@2022 Venus Funeral</StyledP>
-          <StyledP>服務及條款</StyledP>
         </LogoWrapper>
       </StyledContainer>
     </StyledFooter>
