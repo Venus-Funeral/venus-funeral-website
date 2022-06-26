@@ -105,6 +105,7 @@ const StyledHeader = styled(Text) <{ disableUnderline?: boolean }>`
   margin-bottom: 0;
   position: relative;
   margin-bottom: 52px;
+  line-height: ${({theme}) => theme.fontSize.h2};
 
   &:after {
     display: ${({ disableUnderline }) => disableUnderline ? 'none' : 'block'};
