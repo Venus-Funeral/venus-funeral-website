@@ -15,19 +15,19 @@ const nextConfig = {
   },
   env: {
     facebookUrl: 'https://www.facebook.com/金星殯儀服務-395066911133842/',
-    phone: '93810003',
+    phone: '9381 0003',
     email: 'info@venusfuneralservice.com',
   },
   webpack: (cfg) => {
     cfg.module.rules.push(
-        {
-            test: /\.md$/,
-            loader: 'frontmatter-markdown-loader',
-            options: { mode: ['react-component'] }
-        }
+      {
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        options: { mode: ['react-component'] }
+      }
     )
     return cfg;
-}
+  }
 };
 
 module.exports = withNx(nextConfig);

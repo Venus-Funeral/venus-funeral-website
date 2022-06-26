@@ -6,7 +6,7 @@ import Logo from '../logo/logo';
 import MobileMenu from '../mobile-menu/mobile-menu';
 
 /* eslint-disable-next-line */
-export interface NavbarProps { }
+export interface NavbarProps {}
 
 const StyledNavbar = styled.nav<{showBorder?: boolean}>`
   background: white;
@@ -75,7 +75,8 @@ export const navItems = [
   { label: '關於我們', href: '/about' },
   { label: '服務流程', href: '/processes' },
   { label: '帛事花牌', href: '/flowers' },
-]
+  { label: '聯絡我們', href: '/contact' },
+];
 
 export function Navbar(props: NavbarProps) {
   const [showBorder, setShowBorder] = useState(false)
@@ -110,14 +111,12 @@ export function Navbar(props: NavbarProps) {
           </a>
         </Link>
         <LinksWrapper>
-          {
-            navItems &&
+          {navItems &&
             navItems.map(({ label, href }) => (
               <Link href={href} key={href} passHref>
                 <StyledLink>{label}</StyledLink>
               </Link>
-            ))
-          }
+            ))}
         </LinksWrapper>
         <MobileMenu />
       </StyledContainer>
