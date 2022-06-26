@@ -77,7 +77,11 @@ const ButtonLinksWrapper = styled.div`
 
 const ServiceDetailPage: NextPage = ({ data }: any) => {
   return (
-    <PageLayout>
+    <PageLayout
+      title={data.serviceName}
+      description={data.serviceDescription}
+      disableCta
+    >
       <TextBanner
         header={data.serviceName}
         content={data.serviceDescription}

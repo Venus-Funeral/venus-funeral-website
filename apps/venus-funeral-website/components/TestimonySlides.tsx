@@ -28,7 +28,7 @@ const Wrapper = styled.div<{ slideCount: number }>`
     background-position: center;
     background-size: cover;
     width: 360px;
-    height: 320px;
+    height: 400px;
     filter: blur(1px);
     background: #f5dcbf;
     border-radius: 12px;

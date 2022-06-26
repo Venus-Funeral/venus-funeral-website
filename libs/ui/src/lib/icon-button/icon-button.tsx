@@ -24,11 +24,12 @@ const isButton = (props: ButtonLinkProps): props is ButtonProps => props.href ==
 
 interface StyledIconButtonIconProps {
   size?: number;
-  color?: string
+  color?: string;
+  backgroundColor?: string;
 }
 
 const StyledIconButton = styled.button<StyledIconButtonIconProps>`
-  background: ${({theme}) => theme.colors.khaki};
+  background: ${({theme, backgroundColor}) => backgroundColor || theme.colors.gold};
   border-radius: 50px;
   width: 45px;
   height: 45px;
@@ -39,6 +40,11 @@ const StyledIconButton = styled.button<StyledIconButtonIconProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: pointer;
+  }
 `;
 
 export function IconButton({
@@ -56,7 +62,6 @@ export function IconButton({
           className={className}
           as="a"
           {...props}
-          
         >
           {children}
         </StyledIconButton>

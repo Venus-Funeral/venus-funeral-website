@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { PageLayout, Navbar, ServicePreviewCard, Container } from '@venus-funeral/ui'
+import { PageLayout, Navbar, ServicePreviewCard, Container, MediaReportCarousel } from '@venus-funeral/ui'
 import { attributes, react as Content } from '../../../content/serviceOverviews.md'
 import TestimonySlides from '../components/TestimonySlides';
 import SellingPointsSection from '../components/SellingPointsSection';
@@ -42,6 +42,7 @@ export function Index() {
       </Container>
       <SellingPointsSection />
       <TestimonySlides />
+      <MediaReportCarousel/>
     </PageLayout>
   );
 }

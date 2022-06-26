@@ -3,10 +3,10 @@ import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 import Navbar from '../navbar/navbar';
 import { ImWhatsapp } from 'react-icons/im';
-import Footer from '../footer/footer';
+import Footer, { FooterProps } from '../footer/footer';
 
 /* eslint-disable-next-line */
-export interface PageLayoutProps {
+export interface PageLayoutProps extends FooterProps {
   title?: string;
   description?: string;
 }
@@ -36,9 +36,10 @@ const WhatsappFab = styled.a`
 export function PageLayout({
   title,
   description,
+  disableCta,
   children,
 }: PropsWithChildren<PageLayoutProps>) {
-  const pageTitle = `${title ? title + ' | ' : ''}金星殯儀`
+  const pageTitle = `${title ? title + ' | ' : ''}金星殯儀`;
 
   return (
     <>
@@ -64,7 +65,7 @@ export function PageLayout({
       <WhatsappFab href="whatsapp://send?phone=3464478983">
         <ImWhatsapp color="#fff" fontSize={42} />
       </WhatsappFab>
-      <Footer />
+      <Footer disableCta={disableCta} />
     </>
   );
 }

@@ -5,6 +5,9 @@ import { ThemeProvider } from 'styled-components';
 import './styles.css';
 import 'swiper/css';
 import "swiper/css/effect-cards";
+import "swiper/css/bundle";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (

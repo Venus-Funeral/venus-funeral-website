@@ -1,3 +1,4 @@
+export * from './lib/media-report-carousel/media-report-carousel';
 export * from './lib/mobile-menu/mobile-menu';
 export * from './lib/cta-banner/cta-banner';
 export * from './lib/full-width-banner/full-width-banner';

@@ -1,5 +1,6 @@
 import {
   Container,
+  Header,
   PageLayout,
   Text,
   TextBanner,
@@ -15,9 +16,7 @@ import { ReactComponent as AvatarIcon } from '../../public/avatar1.svg';
 
 const ContactContainer = styled(Container)`
   height: 600px;
-  padding: 12px 0px;
   position: relative;
-  margin: 12px auto;
 `;
 
 const ContactBgImage = styled.img`
@@ -29,38 +28,45 @@ const ContactBgImage = styled.img`
   top: 0;
   right: 0;
   z-index: -1;
+  border-radius: 12px;
+  display: none;
+
+  ${({ theme }) => theme.breakPoints.tablet} {
+    display: block;
+  }
 `;
 
 const ContactDetail = styled.div`
-  /* padding-top: 36px; */
-  /* padding-bottom: 36px; */
-  padding: 44px 24px;
   height: 100%;
   z-index: 2;
 `;
 
-const ContactUsTitle = styled.h1`
-  font-size: 4rem;
-	color: ${(props) => props.theme.colors.gold}}
-	margin-bottom: 0.75rem;
-`;
-
 const ContactDetailsCardContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 24px;
+
+  ${({ theme }) => theme.breakPoints.tablet} {
+    flex-direction: row;
+  }
 `;
 
 const ContactDetailsCard = styled.div`
   box-shadow: 0 1px 6px 0 rgb(0 0 0 / 6%), 0 2px 32px 0 rgb(0 0 0 / 16%);
-  margin: 0 8px;
   background-color: white;
-  padding: 24px 48px;
+  padding: 24px;
   height: 100%;
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: flex-start;
+  border-radius: 12px;
+
+  ${({ theme }) => theme.breakPoints.tablet} {
+    width: 40%;
+    min-width: 300px;
+    padding: 24px 48px;
+  }
 `;
 
 const StyledAvastar = styled(AvatarIcon)`
@@ -68,49 +74,59 @@ const StyledAvastar = styled(AvatarIcon)`
   border-radius: 50%;
   align-self: center;
   svg {
-    width: 100%%;
+    width: 100%;
     height: 36px;
   }
 `;
 
 const ContactTextContainer = styled.div`
   padding: 4px;
-	margin-bottom: 4px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
-	color: ${(props) => props.theme.colors.gold}};
-	font-size: 36px;
-`;
+  color: ${(props) => props.theme.colors.gold};
+  font-size: 36px;
+  gap: 12px;
 
-const ContactDetailsText = styled.h1`
-  padding-left: 12px;
-	font-size: 20px;
-	color: ${(props) => props.theme.colors.gold}};
-	width: 70%;
+  & a {
+    display: flex;
+    align-items: center;
+  }
+
+  & span,
+  a {
+    word-break: break-all;
+  }
 `;
 
 export function Contact() {
   return (
-    <PageLayout title="聯絡我們" description="聯絡我們">
+    <PageLayout title="聯絡我們" description="聯絡我們" disableCta>
       <ContactContainer>
         <ContactDetail>
-          <ContactUsTitle>聯絡我們</ContactUsTitle>
+          <Header>聯絡我們</Header>
           <ContactDetailsCardContainer>
             <ContactDetailsCard>
               <StyledAvastar />
               <ContactTextContainer>
                 <MdOutlineEmail />
-                <ContactDetailsText>{process.env['email']}</ContactDetailsText>
+                <Text fontSize="subtitle" color="gold">
+                  {process.env['email']}
+                </Text>
               </ContactTextContainer>
               <ContactTextContainer>
                 <MdOutlinePhoneAndroid />
-                <ContactDetailsText>{process.env['phone']}</ContactDetailsText>
+                <Text fontSize="subtitle" color="gold">
+                  {process.env['phone']}
+                </Text>
               </ContactTextContainer>
               <ContactTextContainer>
                 <MdOutlineFacebook />
-                <ContactDetailsText>
-                  {process.env['facebookUrl']}
-                </ContactDetailsText>
+                <a href={process.env['facebookUrl']}>
+                  <Text fontSize="subtitle" color="gold" component="span">
+                    金星殯儀服務
+                  </Text>
+                </a>
               </ContactTextContainer>
             </ContactDetailsCard>
             <ContactDetailsCard>
@@ -119,8 +135,7 @@ export function Contact() {
             </ContactDetailsCard>
           </ContactDetailsCardContainer>
         </ContactDetail>
-        <ContactBgImage src="/contact.jpg"></ContactBgImage>
-        {/*  */}
+        <ContactBgImage src="/contact.jpg" />
       </ContactContainer>
     </PageLayout>
   );

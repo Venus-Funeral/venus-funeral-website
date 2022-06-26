@@ -25,6 +25,10 @@ const CardWrapper = styled.div`
   & p {
     color: ${({theme}) => theme.colors.gray};
   }
+
+  & blockquote {
+    font-weight: lighter;
+  }
 `
 
 const Author = styled(Text)`
@@ -44,7 +48,7 @@ export function TestimonyCard({
     <CardWrapper>
       <StyledTestimonyCard>
         <RiDoubleQuotesL fontSize={42} />
-        <Text fontSize="body1" component="blockquote">
+        <Text fontSize="h6" component="blockquote">
           {content}
         </Text>
         <Author fontSize="h5" component="div">{name}</Author>
