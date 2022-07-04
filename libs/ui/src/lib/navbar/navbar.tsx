@@ -16,7 +16,7 @@ const StyledNavbar = styled.nav<{showBorder?: boolean}>`
   height: 96px;
   position: sticky;
   top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   z-index: 500;
 `;
 
@@ -73,6 +73,7 @@ const StyledLink = styled.a`
 
 export const navItems = [
   { label: '關於我們', href: '/about' },
+  { label: '服務概覽', href: '/services' },
   { label: '服務流程', href: '/processes' },
   { label: '帛事花牌', href: '/flowers' },
   { label: '聯絡我們', href: '/contact' },

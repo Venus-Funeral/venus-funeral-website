@@ -11,7 +11,7 @@ import {
 } from '@venus-funeral/ui';
 import {
   attributes,
-} from '../../../../content/serviceOverviews.md';
+} from '../../../../../content/serviceOverviews.md';
 import { MdPhone, MdFacebook, MdOutlineEmail } from 'react-icons/md';
 
 const { services } = attributes;

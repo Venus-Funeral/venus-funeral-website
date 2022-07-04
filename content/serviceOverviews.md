@@ -1,4 +1,9 @@
 ---
+banner: https://res.cloudinary.com/djblau8at/image/upload/v1654469108/5_tdp160.jpg
+missions:
+  - text: 家族祖傳
+  - text: 一條龍服務 豐儉由人
+  - text: 誠摯態度 以客為尊
 services:
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1654468877/WhatsApp_Image_2022-06-05_at_8.55.19_PM_je2xiv.jpg
     serviceName: 醫院出殯

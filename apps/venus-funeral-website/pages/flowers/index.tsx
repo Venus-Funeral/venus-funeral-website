@@ -123,7 +123,7 @@ const slides = photos.map(({
   })),
 }));
 
-const tiers = ['全部(All)', 'A', 'B', 'C', 'E', 'F', 'G', 'H']
+const tiers = ['全部(All)', 'A', 'B', 'C', 'E', 'F', 'G', 'H', 'I', 'J']
 
 const FlowerPage: NextPage = () => {
   const [index, setIndex] = useState(-1);

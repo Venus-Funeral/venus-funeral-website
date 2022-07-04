@@ -60,7 +60,6 @@ export function PageLayout({
         <meta name="twitter:description" content={description} />
         {/* <meta name="twitter:image" content={thumbnail} /> */}
       </Head>
-      <Navbar />
       {children}
       <WhatsappFab href={`whatsapp://send?phone=852${93810003}`}>
         <ImWhatsapp color="#fff" fontSize={42} />

@@ -5,6 +5,7 @@ import React from 'react'
 import styled from 'styled-components';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { Container, Text } from '@venus-funeral/ui';
+import { transformCloundinaryImage } from '@venus-funeral/ui';
 
 interface FlowerGridGalleryProps {
   photoSrcs: any[];
@@ -59,7 +60,7 @@ const FlowerGridGallery: React.FC<FlowerGridGalleryProps> = React.memo(
               photoSrcs &&
               photoSrcs.map((it, idx) =>
                 <FlowerCard key={idx}>
-                  <img src={it.src} key={idx} onClick={clickImageHandler(idx)} />
+                  <img src={transformCloundinaryImage(it.src, 400)} key={idx} onClick={clickImageHandler(idx)} />
                   <FlowerDescription>
                     <Text color="default">{it.flowerName}</Text>
                     <Text color="default">${internationalNumberFormat.format(it.price)}</Text>
