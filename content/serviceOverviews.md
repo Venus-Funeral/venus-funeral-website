@@ -15,9 +15,14 @@ services:
     serviceImage: https://res.cloudinary.com/djblau8at/image/upload/v1654467122/th-3090727570_flthli.jpg
     secondaryServiceImage: https://res.cloudinary.com/djblau8at/image/upload/v1654467057/pexels-nancy-bourque-1209978_qvrec8.jpg
   - serviceName: 道教喪禮
-    serviceDescription: 道教法事是為逝者得以安息，生者內心得以安寧而作的追度道場，此為寄託了生者對逝者往日情思及敬孝之心所作出的最後敬意的一門法事。法事儀式包括1.
-      喃嘸開路、請水運財、書白布祭文、擔帽買水2. 上山旺爐 / 旺土安葬、除服英雄 3. 回宅安麈會祖先、旺屋 4. 打齋大法事 及5.
-      破地獄。整個儀式全由喃嘸法師主持。
+    serviceDescription: |-
+      道教法事是為逝者得以安息，生者內心得以安寧而作的追度道場，此為寄託了生者對逝者往日情思及敬孝之心所作出的最後敬意的一門法事。法事儀式包括
+
+      1. 喃嘸開路、請水運財、書白布祭文、擔帽買水
+      2. 上山旺爐 / 旺土安葬、除服英雄
+      3. 回宅安麈會祖先、旺屋
+      4. 打齋大法事
+      5. 破地獄。整個儀式全由喃嘸法師主持。
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1654528953/PHOTO-2022-06-06-14-06-01_2_txaksd.jpg
     secondaryServiceImage: https://res.cloudinary.com/djblau8at/image/upload/v1654467413/DSC00444_ibskyn.jpg
   - serviceName: 佛教喪禮

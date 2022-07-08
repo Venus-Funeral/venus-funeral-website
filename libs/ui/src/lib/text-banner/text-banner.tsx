@@ -1,8 +1,8 @@
-import { Container } from '@venus-funeral/ui';
 import styled, { keyframes } from 'styled-components';
 import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
 import Text from '../text/text';
+import Container from '../container/container';
 
 /* eslint-disable-next-line */
 export interface TextBannerProps {
@@ -87,6 +87,10 @@ const TextWrapper = styled.div`
   letter-spacing: 1.05px ;
   line-height: 180% ;
 
+  & > p {
+    white-space: pre-wrap;
+  }
+
   ${({ theme }) => theme.breakPoints.desktop} {
     padding: 40px 42px;
   }
@@ -136,7 +140,7 @@ export function TextBanner({
             <Fade delay={500}>
               <TextWrapper>
                 <StyledHeader component="h6" fontSize="h3">{header}</StyledHeader>
-                <Text component="p" fontSize="body1">{content}</Text>
+              <Text component="p" fontSize="subtitle">{content}</Text>
               </TextWrapper>
             </Fade>
           </Slide>

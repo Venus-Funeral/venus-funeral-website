@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Container from '../container/container';
@@ -6,11 +7,11 @@ import Logo from '../logo/logo';
 import MobileMenu from '../mobile-menu/mobile-menu';
 
 /* eslint-disable-next-line */
-export interface NavbarProps {}
+export interface NavbarProps { }
 
-const StyledNavbar = styled.nav<{showBorder?: boolean}>`
+const StyledNavbar = styled.nav<{ showBorder?: boolean }>`
   background: white;
-  border-bottom: ${({showBorder}) => showBorder ? '1px solid #EBEBEB' : '1px solid white'};
+  border-bottom: ${({ showBorder }) => showBorder ? '1px solid #EBEBEB' : '1px solid white'};
   transition: 200ms ease;
   width: 100%;
   height: 96px;
@@ -39,8 +40,8 @@ const LinksWrapper = styled.div`
   }
 `;
 
-const StyledLink = styled.a`
-  color: ${({ theme }) => theme.colors.default};
+const StyledLink = styled.a<{ active?: boolean }>`
+  color: ${({ theme, active }) => active ? theme.colors.gold : theme.colors.default};
   font-size: ${({ theme }) => theme.fontSize.body1};
   position: relative;
   transition: 200ms ease;
@@ -51,7 +52,7 @@ const StyledLink = styled.a`
     left: 0;
     right: 0;
     margin: auto;
-    width: 0%;
+    width: ${({ active }) => active ? 100 : 0}%;
     content: '.';
     color: transparent;
     background: #b48650;
@@ -69,19 +70,21 @@ const StyledLink = styled.a`
       width: 100%;
     }
   }
-`;
+  `
 
 export const navItems = [
   { label: '關於我們', href: '/about' },
   { label: '服務概覽', href: '/services' },
   { label: '服務流程', href: '/processes' },
   { label: '帛事花牌', href: '/flowers' },
+  { label: '殯儀知識', href: '/knowledges' },
   { label: '聯絡我們', href: '/contact' },
 ];
 
 export function Navbar(props: NavbarProps) {
+  const router = useRouter()
+  console.log(router.pathname)
   const [showBorder, setShowBorder] = useState(false)
-  console.log('showBorder',showBorder)
   useEffect(() => {
     const handleScroll = () => {
       // console.log('window.scrollY', window.scrollY)
@@ -102,7 +105,7 @@ export function Navbar(props: NavbarProps) {
       }
     }
   }, [])
-  
+
   return (
     <StyledNavbar showBorder={showBorder}>
       <StyledContainer>
@@ -115,7 +118,7 @@ export function Navbar(props: NavbarProps) {
           {navItems &&
             navItems.map(({ label, href }) => (
               <Link href={href} key={href} passHref>
-                <StyledLink>{label}</StyledLink>
+                <StyledLink active={router.pathname === href}>{label}</StyledLink>
               </Link>
             ))}
         </LinksWrapper>

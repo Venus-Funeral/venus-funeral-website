@@ -14,6 +14,7 @@ const StyledButton = styled.a<Partial<ButtonProps>>`
   color: ${(props) => props.theme.colors.default};
   display: inline-flex;
   align-items: center;
+  font-size: 16px;
   justify-content: center;
   height: 48px;
   padding: 0 32px;

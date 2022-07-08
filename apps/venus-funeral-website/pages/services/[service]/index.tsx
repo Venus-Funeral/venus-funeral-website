@@ -9,9 +9,7 @@ import {
   TextBanner,
   transformCloundinaryImage,
 } from '@venus-funeral/ui';
-import {
-  attributes,
-} from '../../../../../content/serviceOverviews.md';
+import { attributes } from '../../../../../content/serviceOverviews.md';
 import { MdPhone, MdFacebook, MdOutlineEmail } from 'react-icons/md';
 
 const { services } = attributes;
@@ -30,12 +28,12 @@ const MoreSection = styled.section`
   }
 
   ${({ theme }) => theme.breakPoints.tablet} {
-    height: 676px;
+    height: 500px;
     flex-direction: row;
 
     & > * {
-    flex: 1 1 0;
-    width: 50%;
+      flex: 1 1 0;
+      width: 50%;
     }
   }
 `;
@@ -94,13 +92,13 @@ const ServiceDetailPage: NextPage = ({ data }: any) => {
         <MoreSection>
           <MoreSectionTextWrapper>
             <Text fontSize="h2" component="h6">
-              立即聯絡我們
+              聯絡我們
               <br />
               了解更多
             </Text>
             <ButtonLinksWrapper>
               <IconButton href={process.env['facebookUrl']} target="_blank">
-                <MdFacebook/>
+                <MdFacebook />
               </IconButton>
               <IconButton href={`tel:${process.env['phone']}`}>
                 <MdPhone />
@@ -108,16 +106,14 @@ const ServiceDetailPage: NextPage = ({ data }: any) => {
               <IconButton href={`mailto:${process.env['email']}`}>
                 <MdOutlineEmail />
               </IconButton>
-              {/* <Button href="/processes">Whatsapp</Button>
-              <Button href="/processes">了解其他服務</Button> */}
             </ButtonLinksWrapper>
           </MoreSectionTextWrapper>
           <div>
             <img
               src={transformCloundinaryImage(
                 data.secondaryServiceImage ||
-                  data.thumbnail ||
-                  data.serviceImage,
+                data.thumbnail ||
+                data.serviceImage,
                 720
               )}
               alt=""
@@ -135,7 +131,7 @@ export async function getStaticProps({ params: { service } }) {
       data:
         services && services.find(({ serviceName }) => serviceName === service),
     },
-  };
+  }
 }
 
 export async function getStaticPaths() {

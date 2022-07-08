@@ -6,6 +6,7 @@ serviceKeyPoints:
   - keyPoint: 歡迎來圖自訂款式
   - keyPoint: 可換顏色及花材
   - keyPoint: 協助撰寫輓詞
+  - keyPoint: 安排運送指定地點
 services:
   - flowerName: A01
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1656362963/A01_xtjbpf.jpg
@@ -59,4 +60,120 @@ services:
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1656363370/D04_dtpvtk.jpg
     price: 750
     tier: D
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275427/E01_e0lpde.jpg
+    flowerName: E01
+    price: 920
+    tier: E
+  - price: 920
+    thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275429/E02_ogbo01.jpg
+    flowerName: E02
+    tier: E
+  - flowerName: E03
+    thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275432/E03_lgqcms.jpg
+    price: 920
+    tier: E
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275558/F01_jjqlji.jpg
+    flowerName: F01
+    price: 1147
+    tier: F
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275558/F01_jjqlji.jpg
+    flowerName: F01
+    price: 1147
+    tier: F
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275563/F02_i1m4xk.jpg
+    flowerName: F02
+    price: 1147
+    tier: F
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275568/F03_esqys9.jpg
+    flowerName: F03
+    price: 1147
+    tier: F
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275573/F04_whdkhn.jpg
+    flowerName: F04
+    price: 1147
+    tier: F
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275580/F05_zk7abo.jpg
+    flowerName: F05
+    price: 1147
+    tier: F
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275588/F06_lei2il.jpg
+    flowerName: F06
+    price: 1147
+    tier: F
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275598/F07_cct6sg.jpg
+    flowerName: F07
+    price: 1147
+    tier: F
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275609/F08_tss2td.jpg
+    flowerName: F08
+    price: 1147
+    tier: F
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275792/G01_sbns5h.jpg
+    flowerName: G01
+    price: 1400
+    tier: G
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275793/G02_ahbosq.jpg
+    flowerName: G02
+    price: 1400
+    tier: G
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275795/G03_rdxcxi.jpg
+    flowerName: G03
+    price: 1400
+    tier: G
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275798/G04_tiakmt.jpg
+    flowerName: G04
+    price: 1400
+    tier: G
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275802/G05_ft1eom.jpg
+    flowerName: G05
+    price: 1400
+    tier: G
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275807/G06_j05anz.jpg
+    flowerName: G06
+    price: 1400
+    tier: G
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275919/H01_f5vigt.jpg
+    flowerName: H01
+    price: 1500
+    tier: H
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275925/H02_dwjaxd.jpg
+    flowerName: H02
+    price: 1500
+    tier: H
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275933/H03_dhgmxb.jpg
+    flowerName: H03
+    price: 1500
+    tier: H
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275942/H04_jifcsb.jpg
+    flowerName: H04
+    price: 1500
+    tier: H
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657276060/I01_uyug1f.jpg
+    flowerName: I01
+    price: 1620
+    tier: I
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657276078/I02_w0fw9c.jpg
+    flowerName: I02
+    price: 1620
+    tier: I
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657276084/I03_qqhhro.jpg
+    flowerName: I03
+    price: 1620
+    tier: I
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657276097/I04_q3tirs.jpg
+    flowerName: I04
+    price: 1620
+    tier: I
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657276111/I05_mvd1d6.jpg
+    flowerName: I05
+    price: 1620
+    tier: I
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657276663/J01_a90y4y.jpg
+    flowerName: J01
+    price: 2100
+    tier: J
+  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657276679/J02_zublyn.jpg
+    flowerName: J02
+    price: 2100
+    tier: J
 ---

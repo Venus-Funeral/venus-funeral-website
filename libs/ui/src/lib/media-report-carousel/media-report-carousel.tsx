@@ -159,24 +159,15 @@ export const MediaReportCarousel = React.memo(() => {
             reports.map((it: any, idx: number) => (
               <SwiperSlide key={idx}>
                 <StyledCard>
-                  <a href={it.link} target="_blank">
+                  <a href={it.link} target="_blank" rel="noreferrer">
                     <StyledImage src={it.thumbnail} />
                   </a>
-                  {activeIndex === idx && (
-                    <div
-                      style={{
-                        opacity: activeIndex === idx && show ? 1 : 0,
-                        transition: '200ms ease',
-                      }}
-                    >
-                      <StyledQuote fontSize="h6" component="p">
-                        {reports[activeIndex].quote}
-                      </StyledQuote>
-                      <StyledText fontSize="h4" component="div">
-                        {reports[activeIndex].header}
-                      </StyledText>
-                    </div>
-                  )}
+                  <StyledQuote fontSize="h6" component="p">
+                    {reports[idx].quote}
+                  </StyledQuote>
+                  <StyledText fontSize="h4" component="div">
+                    {reports[idx].header}
+                  </StyledText>
                 </StyledCard>
               </SwiperSlide>
             ))}

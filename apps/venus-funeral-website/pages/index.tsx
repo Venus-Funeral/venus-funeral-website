@@ -94,7 +94,7 @@ export function Index() {
           <BannerImage src={transformCloundinaryImage(banner, 1440)} />
           <BannerTextWrapper>
             {missions &&
-              missions.map(({ text }, idx) => <Text fontSize="h2" component="h6" key={idx}>{text}</Text>)}
+              missions.map(({ text }, idx) => <Text fontSize="h2" component="h6" color="white" key={idx}>{text}</Text>)}
               <Button href="/services" variant="contained">
                 查看服務
               </Button>

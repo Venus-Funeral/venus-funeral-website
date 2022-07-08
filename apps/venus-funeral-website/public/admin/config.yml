@@ -9,6 +9,15 @@ media_library:
     api_key: 583977975538897
 public_folder: img
 collections:
+  - label: "殯儀知識"
+    name: "blog"
+    folder: "_posts/blog"
+    create: true
+    fields:
+      - {label: "標題", name: "title", widget: "string"}
+      - {label: "建立日期", name: "date", widget: "datetime"}
+      - {label: "相片", name: "thumbnail", widget: "image"}
+      - {label: "內容", name: "body", widget: "markdown"}
   - name: "pages"
     label: "頁面"
     files:
@@ -30,9 +39,7 @@ collections:
               - { label: "預覽相片", name: "thumbnail", widget: "image" }
               - { label: "服務相片", name: "serviceImage", widget: "image", required: false }
               - { label: "次要服務相片", name: "secondaryServiceImage", widget: "image", required: false }
-              - { label: "價格至", name: "priceTo", widget: "number", required: false }
-              - { label: "價格由", name: "priceFrom", widget: "number", required: false }
-              - { label: "服務詳情", name: "serviceDescription", widget: "text", required: false }
+              - { label: "服務詳情", name: "serviceDescription", widget: "markdown", required: false }
           - label: "服務重點"
             name: "sellPoints"
             widget: list
