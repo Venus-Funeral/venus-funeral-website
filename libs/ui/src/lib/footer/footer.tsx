@@ -1,10 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import styled from 'styled-components';
-import Container from '../container/container';
-import Link from 'next/link';
-import Logo from '../logo/logo';
-import CtaBanner from '../cta-banner/cta-banner';
-import { navItems } from '../navbar/navbar';
+import styled from 'styled-components'
+import Container from '../container/container'
+import Link from 'next/link'
+import Logo from '../logo/logo'
+import CtaBanner from '../cta-banner/cta-banner'
+import { navItems } from '../navbar/navbar'
+import {
+  MdOutlineFacebook,
+} from 'react-icons/md'
+import { attributes } from '../../../../../content/contactus.md'
+
+const { facebookLink } = attributes
 
 /* eslint-disable-next-line */
 export interface FooterProps {
@@ -17,7 +23,7 @@ const StyledFooter = styled.div<FooterProps>`
   color: white;
   padding: 40px 0;
   margin-top: ${({ disableCta }) => (disableCta ? 80 : 0)}px;
-`;
+`
 
 const StyledContainer = styled(Container)`
   display: flex;
@@ -28,7 +34,7 @@ const StyledContainer = styled(Container)`
     flex-direction: row;
     justify-content: space-between;
   }
-`;
+`
 
 const LinksContainer = styled.div`
   display: flex;
@@ -41,7 +47,7 @@ const LinksContainer = styled.div`
     flex-direction: column;
     gap: 8px;
   }
-`;
+`
 
 const LinksWrapper = styled.div`
   display: flex;
@@ -52,7 +58,7 @@ const LinksWrapper = styled.div`
   ${({ theme }) => theme.breakPoints.tablet} {
     flex-direction: row;
   }
-`;
+`
 
 const LogoWrapper = styled.div`
   display: flex;
@@ -64,24 +70,24 @@ const LogoWrapper = styled.div`
     align-items: flex-end;
     margin-top: 0%;
   }
-`;
+`
 
 const BottomLogo = styled(Logo)`
   display: flex;
   align-items: center;
   justify-content: flex-end;
   height: 72px;
-`;
+`
 
 const StyledP = styled.p`
   font-size: ${(props) => props.theme.fontSize.body2};
-`;
+`
 
-const navItemsFirstRow = navItems;
+const navItemsFirstRow = navItems
 
 const navItemsSecondRow = [
   { label: 'Facebook', href: process.env['facebookUrl'] as string },
-];
+]
 
 export function Footer({ disableCta }: FooterProps) {
   return (
@@ -101,12 +107,17 @@ export function Footer({ disableCta }: FooterProps) {
             </LinksWrapper>
             <LinksWrapper>
               <h4>關注我們</h4>
-              {navItemsSecondRow &&
+              <Link href={facebookLink}>
+                <a style={{ fontSize: '32px' }}>
+                  <MdOutlineFacebook />
+                </a>
+              </Link>
+              {/* {navItemsSecondRow &&
                 navItemsSecondRow.map(({ label, href }, idx) => (
                   <Link href={href} key={idx} passHref>
                     <a target="_blank">{label}</a>
                   </Link>
-                ))}
+                ))} */}
             </LinksWrapper>
           </LinksContainer>
           <LogoWrapper>
@@ -120,7 +131,7 @@ export function Footer({ disableCta }: FooterProps) {
         </StyledContainer>
       </StyledFooter>
     </>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

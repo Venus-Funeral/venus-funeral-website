@@ -42,7 +42,7 @@ const KeyPointNodesWrapper = styled.div`
   gap: 12px;
   flex-direction: column;
 
-  ${({theme}) => theme.breakPoints.desktop} {
+  ${({ theme }) => theme.breakPoints.desktop} {
     flex-direction: row;
     margin: 64px 0;
   }
@@ -68,7 +68,7 @@ const BannerTextWrapper = styled.div`
     margin-top: 48px;
   }
 
-  ${({theme}) => theme.breakPoints.tablet} {
+  ${({ theme }) => theme.breakPoints.tablet} {
     max-width: 600px;
     padding: 24px;
     max-width: 500px;
@@ -121,7 +121,12 @@ const slides = photos.map(({
     src: image.src,
     width: image.width,
   })),
-}));
+}))
+
+const SubHeaderContainer = styled(Container)`
+  text-align: center;
+  margin-bottom: 24px;
+`
 
 const tiers = ['全部(All)', 'A', 'B', 'C', 'E', 'F', 'G', 'H', 'I', 'J']
 
@@ -165,6 +170,7 @@ const FlowerPage: NextPage = () => {
     <PageLayout
       title="帛事花牌"
       description={description}
+      thumbnail={transformCloundinaryImage(bannerImage, 500)}
     >
       <FullWidthBanner
         imageSrc={transformCloundinaryImage(bannerImage, 891)}
@@ -186,6 +192,9 @@ const FlowerPage: NextPage = () => {
           ))
         }
       </KeyPointNodesWrapper>
+      <SubHeaderContainer>
+        <Text fontSize="h3" component="h6">自選指定款式</Text>
+      </SubHeaderContainer>
       <StyledTabs onChange={changeSelectedTabHandler} id="list">
         {
           tiers && tiers.map((it, idx) => (

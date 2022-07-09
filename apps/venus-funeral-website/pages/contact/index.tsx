@@ -3,15 +3,19 @@ import {
   Header,
   PageLayout,
   Text,
-} from '@venus-funeral/ui';
-import styled from 'styled-components';
+} from '@venus-funeral/ui'
+import styled from 'styled-components'
 import {
   MdOutlineEmail,
   MdOutlinePhoneAndroid,
   MdOutlineFacebook,
-} from 'react-icons/md';
-import { ReactComponent as AvatarIcon } from '../../public/avatar1.svg';
-import ContactForm from '../../components/ContactForm';
+} from 'react-icons/md'
+import { ReactComponent as AvatarIcon } from '../../public/avatar1.svg'
+import ContactForm from '../../components/ContactForm'
+import { attributes } from '../../../../content/contactus.md'
+
+const { phoneNumber, email, facebookLink, description } = attributes
+console.log('attributes', attributes)
 
 const ContactContainer = styled(Container)`
   position: relative;
@@ -20,7 +24,7 @@ const ContactContainer = styled(Container)`
     margin-bottom: 120px;
     height: 600px;
   }
-`;
+`
 
 const ContactBgImage = styled.img`
   height: 100%;
@@ -37,12 +41,12 @@ const ContactBgImage = styled.img`
   ${({ theme }) => theme.breakPoints.desktop} {
     display: block;
   }
-`;
+`
 
 const ContactDetail = styled.div`
   height: 100%;
   z-index: 2;
-`;
+`
 
 const ContactDetailsCardContainer = styled.div`
   display: flex;
@@ -52,7 +56,7 @@ const ContactDetailsCardContainer = styled.div`
   ${({ theme }) => theme.breakPoints.desktop} {
     flex-direction: row;
   }
-`;
+`
 
 const ContactDetailsCard = styled.div`
   box-shadow: 0 6px 20px rgb(0 0 0 / 20%);
@@ -70,7 +74,7 @@ const ContactDetailsCard = styled.div`
     min-width: 300px;
     padding: 24px 48px;
   }
-`;
+`
 
 const StyledAvastar = styled(AvatarIcon)`
   margin-bottom: 28px;
@@ -80,7 +84,7 @@ const StyledAvastar = styled(AvatarIcon)`
     width: 100%;
     height: 36px;
   }
-`;
+`
 
 const ContactTextContainer = styled.div`
   padding: 4px;
@@ -100,32 +104,32 @@ const ContactTextContainer = styled.div`
   a {
     word-break: break-all;
   }
-`;
+`
 
 export function Contact() {
   return (
-    <PageLayout title="聯絡我們" description="聯絡我們" disableCta>
+    <PageLayout title="聯絡我們" description={description} disableCta>
       <ContactContainer>
         <ContactDetail>
           <Header>聯絡我們</Header>
           <ContactDetailsCardContainer>
             <ContactDetailsCard>
-              <StyledAvastar />
+              {/* <StyledAvastar /> */}
               <ContactTextContainer>
                 <MdOutlineEmail />
                 <Text fontSize="subtitle" color="gold">
-                  {process.env['email']}
+                  {email}
                 </Text>
               </ContactTextContainer>
               <ContactTextContainer>
                 <MdOutlinePhoneAndroid />
                 <Text fontSize="subtitle" color="gold">
-                  {process.env['phone']}
+                  {phoneNumber}
                 </Text>
               </ContactTextContainer>
               <ContactTextContainer>
                 <MdOutlineFacebook />
-                <a href={process.env['facebookUrl']}>
+                <a href={facebookLink}>
                   <Text fontSize="subtitle" color="gold" component="span">
                     金星殯儀服務
                   </Text>
@@ -140,7 +144,7 @@ export function Contact() {
         <ContactBgImage src="/contact.jpg" />
       </ContactContainer>
     </PageLayout>
-  );
+  )
 }
 
-export default Contact;
+export default Contact

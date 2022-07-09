@@ -37,7 +37,7 @@ const MenuButton = styled.button<{ open?: boolean }>`
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  color: ${({theme}) => theme.colors.default};
+  color: ${({ theme }) => theme.colors.default};
   padding: 0;
 `
 
@@ -54,6 +54,11 @@ export function MobileMenu(props: MobileMenuProps) {
     setOpen(!open)
   }
 
+  const clickMenuItemHandler = () => {
+    console.log('click')
+    setOpen(false)
+  }
+
   return (
     <StyledMobileMenuWrapper>
       <MenuButton
@@ -68,7 +73,7 @@ export function MobileMenu(props: MobileMenuProps) {
           navItems &&
           navItems.map(({ label, href }) => (
             <Link href={href} key={href} passHref>
-              <StyledLink>{label}</StyledLink>
+              <StyledLink onClick={clickMenuItemHandler}>{label}</StyledLink>
             </Link>
           ))
         }

@@ -40,7 +40,11 @@ const ContentContainer = styled(Container)`
 const KnowledgeBlog = ({ data }) => {
   console.log(data)
   return (
-    <PageLayout>
+    <PageLayout
+      title={data.data.title}
+      description={data.content}
+      thumbnail={data.data.thumbnail}
+    >
       <ContentContainer>
         <Text fontSize="h3" component="h1" bold>{data.data.title}</Text>
         <Date fontSize="body1" component="div">

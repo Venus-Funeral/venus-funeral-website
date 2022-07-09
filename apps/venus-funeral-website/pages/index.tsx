@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import styled from 'styled-components'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import {
   PageLayout,
   Navbar,
@@ -9,15 +9,15 @@ import {
   transformCloundinaryImage,
   Text,
   Button,
-} from '@venus-funeral/ui';
+} from '@venus-funeral/ui'
 import {
   attributes,
   react as Content,
-} from '../../../content/serviceOverviews.md';
-import TestimonySlides from '../components/TestimonySlides';
-import SellingPointsSection from '../components/SellingPointsSection';
+} from '../../../content/serviceOverviews.md'
+import TestimonySlides from '../components/TestimonySlides'
+import SellingPointsSection from '../components/SellingPointsSection'
 
-const { services, sellPoints, banner, missions } = attributes;
+const { services, sellPoints, banner, missions } = attributes
 
 const CardWrapper = styled.div`
   display: grid;
@@ -33,7 +33,7 @@ const CardWrapper = styled.div`
   ${({ theme }) => theme.breakPoints.desktop} {
     grid-template-columns: repeat(4, 1fr);
   }
-`;
+`
 
 const Banner = styled.div`
   max-height: 650px;
@@ -57,7 +57,7 @@ const Banner = styled.div`
     top: 0;
     display: block;
   }
-`;
+`
 
 const BannerTextWrapper = styled.div`
   display: flex;
@@ -71,6 +71,10 @@ const BannerTextWrapper = styled.div`
   height: 100%;
   width: 100%;
 
+  & h1 {
+    font-size: ${({ theme }) => theme.fontSize.h6};
+  }
+
   & * {
     color: white;
     letter-spacing: 4px;
@@ -79,25 +83,40 @@ const BannerTextWrapper = styled.div`
   & > a {
     margin-top: 40px;
   }
-`;
+
+  ${({ theme }) => theme.breakPoints.tablet} {
+    & h1 {
+      font-size: ${({ theme }) => theme.fontSize.h3};
+    }
+  }
+
+  ${({ theme }) => theme.breakPoints.desktop} {
+    & h1 {
+      font-size: ${({ theme }) => theme.fontSize.h2};
+    }
+  }
+`
 
 const BannerImage = styled.img`
   width: 100%;
   object-fit: cover;
-`;
+`
 
 export function Index() {
   return (
-    <PageLayout description={sellPoints[0].content}>
+    <PageLayout
+      thumbnail={banner}
+      description={sellPoints[0].content}
+    >
       <Container>
         <Banner>
           <BannerImage src={transformCloundinaryImage(banner, 1440)} />
           <BannerTextWrapper>
             {missions &&
-              missions.map(({ text }, idx) => <Text fontSize="h2" component="h6" color="white" key={idx}>{text}</Text>)}
-              <Button href="/services" variant="contained">
-                查看服務
-              </Button>
+              missions.map(({ text }, idx) => <Text component="h1" color="white" key={idx}>{text}</Text>)}
+            <Button href="/services" variant="contained">
+              查看服務
+            </Button>
           </BannerTextWrapper>
         </Banner>
       </Container>
@@ -105,7 +124,7 @@ export function Index() {
       <TestimonySlides />
       <MediaReportCarousel />
     </PageLayout>
-  );
+  )
 }
 
-export default Index;
+export default Index

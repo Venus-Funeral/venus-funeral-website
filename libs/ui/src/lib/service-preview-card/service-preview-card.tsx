@@ -56,7 +56,7 @@ export function ServicePreviewCard({
   return (
     <Link href={`/services/${serviceName}`}>
       <a>
-        <StyledServicePreviewCard thumbnail={transformCloundinaryImage(thumbnail, 300)}>
+        <StyledServicePreviewCard thumbnail={transformCloundinaryImage(thumbnail, 400)}>
           <StyledText color="white" fontSize="h5" component="label">
             {serviceName}
           </StyledText>

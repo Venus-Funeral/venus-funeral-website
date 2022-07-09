@@ -1,12 +1,12 @@
-import { Container, MediaReportCarousel, PageLayout, Text, TextBanner } from '@venus-funeral/ui';
-import { NextPage } from 'next';
-import Fade from 'react-reveal/Fade';
-import styled, { keyframes } from 'styled-components';
-import { attributes } from '../../../../content/aboutus.md';
+import { Container, MediaReportCarousel, PageLayout, Text, TextBanner } from '@venus-funeral/ui'
+import { NextPage } from 'next'
+import Fade from 'react-reveal/Fade'
+import styled, { keyframes } from 'styled-components'
+import { attributes } from '../../../../content/aboutus.md'
 
-console.log(attributes);
+console.log(attributes)
 
-const { companyIntro, founderIntro, mediaReports, missions } = attributes;
+const { companyIntro, founderIntro, mediaReports, missions } = attributes
 
 const expand = keyframes`
   0% {
@@ -15,7 +15,7 @@ const expand = keyframes`
   100% {
     width: 95px;
   }
-`;
+`
 
 const StyledHeader = styled(Text)<{ disableUnderline?: boolean }>`
   margin-bottom: 0;
@@ -36,7 +36,7 @@ const StyledHeader = styled(Text)<{ disableUnderline?: boolean }>`
     animation-delay: 1200ms;
     animation-fill-mode: forwards;
   }
-`;
+`
 
 const OwnerImage = styled.img`
   border-radius: 8px;
@@ -54,7 +54,7 @@ const OwnerImage = styled.img`
   ${({ theme }) => theme.breakPoints.desktop} {
     width: 35%;
   }
-`;
+`
 
 const OwnerContainer = styled(Container)`
   display: flex;
@@ -65,7 +65,7 @@ const OwnerContainer = styled(Container)`
   ${({ theme }) => theme.breakPoints.tablet} {
     flex-direction: row;
   }
-`;
+`
 
 const OwnerTextWrapper = styled.div`
   padding: 0;
@@ -81,7 +81,7 @@ const OwnerTextWrapper = styled.div`
   ${({ theme }) => theme.breakPoints.tablet} {
     padding: 40px 36px;
   }
-`;
+`
 
 const OutterWrapper = styled.div`
   width: 100%;
@@ -94,10 +94,10 @@ const OutterWrapper = styled.div`
   ${({ theme }) => theme.breakPoints.desktop} {
     margin-top: 160px;
   }
-`;
+`
 
 const AboutusPage: NextPage = () => {
-  console.log('mount');
+  console.log('mount')
   return (
     <PageLayout title="關於我們" description={companyIntro}>
       <TextBanner
@@ -127,7 +127,7 @@ const AboutusPage: NextPage = () => {
       </Fade>
       <MediaReportCarousel/>
     </PageLayout>
-  );
-};
+  )
+}
 
-export default AboutusPage;
+export default AboutusPage

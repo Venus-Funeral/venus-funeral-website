@@ -78,6 +78,7 @@ const ServiceDetailPage: NextPage = ({ data }: any) => {
     <PageLayout
       title={data.serviceName}
       description={data.serviceDescription}
+      thumbnail={data.thumbnail}
       disableCta
     >
       <TextBanner
