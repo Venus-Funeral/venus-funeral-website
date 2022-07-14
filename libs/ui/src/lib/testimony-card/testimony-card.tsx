@@ -51,7 +51,7 @@ export function TestimonyCard({
         <Text fontSize="h6" component="blockquote">
           {content}
         </Text>
-        <Author fontSize="h5" component="div">{name}</Author>
+        <Author fontSize="h4" component="div">{name}</Author>
       </StyledTestimonyCard>
     </CardWrapper>
   );

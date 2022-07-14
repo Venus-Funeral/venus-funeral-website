@@ -28,7 +28,7 @@ const Wrapper = styled.div<{ slideCount: number }>`
     background-position: center;
     background-size: cover;
     width: 360px;
-    height: 400px;
+    height: 550px;
     filter: blur(1px);
     background: #f5dcbf;
     border-radius: 12px;
@@ -45,7 +45,10 @@ const Wrapper = styled.div<{ slideCount: number }>`
   }
 
   ${({ theme }) => theme.breakPoints.tablet} {
-    /* margin-top: 160px; */
+    .swiper-slide {
+      width: 600px;
+      height: 400px;
+    }
   }
 `;
 
@@ -71,7 +74,7 @@ const TestimonySlides: React.FC = () => {
         }}
         modules={[EffectCoverflow]}
         className="mySwiper"
-        loop
+        // loop
       >
         {testimonies &&
           testimonies.map((it, idx) => (
