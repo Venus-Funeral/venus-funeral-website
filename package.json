@@ -8,7 +8,8 @@
     "test": "nx test",
     "dev": "nx serve venus-funeral-website",
     "genc": "nx g @nrwl/react:component --project=ui --export",
-    "refresh": "yarn run build venus-funeral-website && yarn run nx run venus-funeral-website:export"
+    "refresh": "yarn run build venus-funeral-website && yarn run nx run venus-funeral-website:export",
+    "start:cms": "npx netlify-cms-proxy-server"
   },
   "private": true,
   "dependencies": {

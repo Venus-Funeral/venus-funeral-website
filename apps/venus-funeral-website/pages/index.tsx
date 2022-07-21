@@ -45,31 +45,14 @@ const Banner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0.35;
-    left: 0;
-    top: 0;
-    display: block;
-  }
 `
 
 const BannerTextWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 8px;
   position: absolute;
-  align-items: center;
-  justify-content: center;
-  left: 0;
-  top: 0;
-  height: 100%;
   width: 100%;
+  justify-content: center;
+  bottom: 4px;
 
   & h1 {
     font-size: ${({ theme }) => theme.fontSize.h6};
@@ -81,10 +64,11 @@ const BannerTextWrapper = styled.div`
   }
 
   & > a {
-    margin-top: 40px;
   }
 
   ${({ theme }) => theme.breakPoints.tablet} {
+    bottom: 30px;
+
     & h1 {
       font-size: ${({ theme }) => theme.fontSize.h3};
     }
@@ -112,8 +96,6 @@ export function Index() {
         <Banner>
           <BannerImage src={transformCloundinaryImage(banner, 1440)} />
           <BannerTextWrapper>
-            {missions &&
-              missions.map(({ text }, idx) => <Text component="h1" color="white" key={idx}>{text}</Text>)}
             <Button href="/services" variant="contained">
               查看服務
             </Button>

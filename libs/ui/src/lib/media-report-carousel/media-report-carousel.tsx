@@ -107,6 +107,11 @@ const StyledQuote = styled(Text)`
   text-align: left;
 `;
 
+const Header = styled(Text)`
+  text-align: center;
+  margin-top: 32px;
+`
+
 export const MediaReportCarousel = React.memo(() => {
   const [swiper, setSwiper] = useState<any>();
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -135,6 +140,8 @@ export const MediaReportCarousel = React.memo(() => {
   };
 
   return (
+    <>
+    <Header component="h6" fontSize="h3">傳媒報導</Header>
     <div style={{ overflow: 'hidden' }}>
       <StyledMediaReportCarousel>
         <Swiper
@@ -190,6 +197,7 @@ export const MediaReportCarousel = React.memo(() => {
         </ButtonWrappers>
       </StyledMediaReportCarousel>
     </div>
+    </>
   );
 });
 

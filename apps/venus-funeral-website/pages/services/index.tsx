@@ -1,5 +1,6 @@
 import { Container, Header, PageLayout } from '@venus-funeral/ui';
 import ServiceOverviews from '../../components/ServiceOverviews';
+import SpecialServicesSection from '../../components/SpecialServicesSection';
 
 const ServicesPage = () => {
   return (
@@ -7,6 +8,7 @@ const ServicesPage = () => {
       <Container>
         <Header>服務概覽</Header>
         <ServiceOverviews />
+        <SpecialServicesSection />
       </Container>
     </PageLayout>
   );
