@@ -10,11 +10,12 @@ import { attributes } from '../../../content/serviceOverviews.md';
 const { sellPoints } = attributes;
 
 const StyledContainer = styled(Container)`
-  margin-top: 80px;
-  padding: 80px 20px;
+  margin-top: 0px;
+  padding: 40px 20px 60px;
 
   ${({ theme }) => theme.breakPoints.tablet} {
     margin-top: 80px;
+    padding: 80px 20px;
   }
 `;
 

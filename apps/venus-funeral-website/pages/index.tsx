@@ -40,11 +40,15 @@ const Banner = styled.div`
   width: 100%;
   position: relative;
   border-radius: 12px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${({ theme }) => theme.breakPoints.tablet} {
+    margin-bottom: 80px;
+  }
 `
 
 const BannerTextWrapper = styled.div`

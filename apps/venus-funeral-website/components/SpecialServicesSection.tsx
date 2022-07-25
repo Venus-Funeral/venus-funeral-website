@@ -1,4 +1,4 @@
-import { Container, Text } from '@venus-funeral/ui'
+import { Container, Text, transformCloundinaryImage } from '@venus-funeral/ui'
 import styled from 'styled-components'
 import React from 'react'
 import { attributes } from '../../../content/specialServices.md'
@@ -19,27 +19,38 @@ const ServiceWrapper = styled.div`
   }
 `
 
+const Image = styled.img`
+  border-radius: 12px;
+  margin: 24px 0 40px;
+  width: 100%;
+`
+
 const SpecialServicesSection: React.FC = () => {
   return (
     <>
-    <Text component="h5" fontSize="h3">
-      特式服務
-    </Text>
-    <Wrapper>
-      {
-        services && services.map(({ serviceName, serviceDescription }, idx) => (
-          <ServiceWrapper key={idx}>
-            <Text component="h6" fontSize="h5">
-              {serviceName}
-            </Text>
-            <Text component="p">
-              {serviceDescription}
-            </Text>
-          </ServiceWrapper>
-        ))
-      }
-    </Wrapper>
-      </>
+      <Text component="h5" fontSize="h3">
+        特式服務
+      </Text>
+      <Wrapper>
+        {
+          services && services.map(({ serviceName, serviceDescription, thumbnail }, idx) => (
+            <ServiceWrapper key={idx}>
+              <Text component="h6" fontSize="h5">
+                {serviceName}
+              </Text>
+              {
+                serviceDescription && (
+                  <Text component="p">
+                    {serviceDescription}
+                  </Text>
+                )
+              }
+              <Image src={transformCloundinaryImage(thumbnail, 1200)} alt="" />
+            </ServiceWrapper>
+          ))
+        }
+      </Wrapper>
+    </>
   )
 }
 
