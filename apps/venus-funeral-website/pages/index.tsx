@@ -93,7 +93,6 @@ const BannerImage = styled.img`
 export function Index() {
   return (
     <PageLayout
-      thumbnail={banner}
       description={sellPoints[0].content}
     >
       <Container>

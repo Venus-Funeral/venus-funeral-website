@@ -5,6 +5,7 @@ import { ImWhatsapp } from 'react-icons/im';
 import Navbar from '../navbar/navbar';
 import Footer, { FooterProps } from '../footer/footer';
 import { attributes } from '../../../../../content/aboutus.md'
+import Logo from '../../assets/logo.png'
 
 const { companyIntro } = attributes
 /* eslint-disable-next-line */
@@ -45,6 +46,7 @@ export function PageLayout({
 }: PropsWithChildren<PageLayoutProps>) {
   const pageTitle = `${title ? title + ' | ' : ''}金星殯儀`
   const pageDescription = description || companyIntro
+  const pageThumbnail = thumbnail || Logo
 
   return (
     <>
@@ -56,14 +58,14 @@ export function PageLayout({
         <meta property="og:type" content="website" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={thumbnail} />
+        <meta property="og:image" content={pageThumbnail} />
 
         {/*Twitter SEO*/}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@chainsify" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={thumbnail} />
+        <meta name="twitter:image" content={pageThumbnail} />
       </Head>
       {children}
       <WhatsappFab href={`whatsapp://send?phone=852${93810003}`}>
