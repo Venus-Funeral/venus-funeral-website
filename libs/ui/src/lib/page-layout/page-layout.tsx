@@ -46,7 +46,7 @@ export function PageLayout({
 }: PropsWithChildren<PageLayoutProps>) {
   const pageTitle = `${title ? title + ' | ' : ''}金星殯儀`
   const pageDescription = description || companyIntro
-  const pageThumbnail = thumbnail || Logo
+  const pageThumbnail = thumbnail || (Logo as any).src
 
   return (
     <>
