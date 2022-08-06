@@ -5,7 +5,7 @@ import { ImWhatsapp } from 'react-icons/im';
 import Navbar from '../navbar/navbar';
 import Footer, { FooterProps } from '../footer/footer';
 import { attributes } from '../../../../../content/aboutus.md'
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/thumbnail.png'
 
 const { companyIntro } = attributes
 /* eslint-disable-next-line */
