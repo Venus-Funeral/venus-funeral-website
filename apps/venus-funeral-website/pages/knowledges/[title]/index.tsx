@@ -43,7 +43,7 @@ const KnowledgeBlog = ({ data }) => {
     <PageLayout
       title={data.data.title}
       description={data.content}
-      thumbnail={data.data.thumbnail}
+      thumbnail={transformCloundinaryImage(data.data.thumbnail, 720)}
     >
       <ContentContainer>
         <Text fontSize="h3" component="h1" bold>{data.data.title}</Text>
