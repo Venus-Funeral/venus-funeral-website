@@ -23,8 +23,6 @@ const MoreSection = styled.section`
 
   & img {
     height: 100%;
-    /* width: 100%; */
-    /* object-fit: contain; */
   }
 
   ${({ theme }) => theme.breakPoints.tablet} {
@@ -45,6 +43,7 @@ const MoreSectionTextWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 24px;
+  align-items: center;
 
   & h6 {
     font-size: 32px;
@@ -53,7 +52,14 @@ const MoreSectionTextWrapper = styled.div`
 
   ${({ theme }) => theme.breakPoints.tablet} {
     padding: 0 54px;
+    align-items: flex-start;
 
+    & h6 {
+      font-size: 52px;
+    }
+  }
+
+  ${({ theme }) => theme.breakPoints.desktop} {
     & h6 {
       font-size: 64px;
     }
@@ -72,6 +78,17 @@ const ButtonLinksWrapper = styled.div`
     margin-bottom: 24px;
   }
 `;
+
+const PhotoWrapper = styled.div`
+  max-height: 300px;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  ${({ theme }) => theme.breakPoints.tablet} {
+    max-height: unset;
+  }
+`
 
 const ServiceDetailPage: NextPage = ({ data }: any) => {
   return (
@@ -109,7 +126,7 @@ const ServiceDetailPage: NextPage = ({ data }: any) => {
               </IconButton>
             </ButtonLinksWrapper>
           </MoreSectionTextWrapper>
-          <div>
+          <PhotoWrapper>
             <img
               src={transformCloundinaryImage(
                 data.secondaryServiceImage ||
@@ -119,7 +136,7 @@ const ServiceDetailPage: NextPage = ({ data }: any) => {
               )}
               alt=""
             />
-          </div>
+          </PhotoWrapper>
         </MoreSection>
       </Container>
     </PageLayout>
