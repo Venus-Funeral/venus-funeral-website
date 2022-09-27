@@ -76,10 +76,6 @@ services:
     flowerName: F01
     price: 1147
     tier: F
-  - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275558/F01_jjqlji.jpg
-    flowerName: F01
-    price: 1147
-    tier: F
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275563/F02_i1m4xk.jpg
     flowerName: F02
     price: 1147
