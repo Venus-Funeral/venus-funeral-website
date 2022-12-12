@@ -128,7 +128,7 @@ const SubHeaderContainer = styled(Container)`
   margin-bottom: 24px;
 `
 
-const tiers = ['全部(All)', 'A', 'B', 'C', 'E', 'F', 'G', 'H', 'I', 'J']
+const tiers = ['全部(All)', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
 const FlowerPage: NextPage = () => {
   const [index, setIndex] = useState(-1);
