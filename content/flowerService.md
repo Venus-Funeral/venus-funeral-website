@@ -34,23 +34,23 @@ services:
     tier: B
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1698689432/IMG_2356_ptwsum.jpg
     flowerName: B05
-    price: 538
+    price: 540
     tier: B
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1698689411/IMG_2355_abnjgh.jpg
     flowerName: B06
-    price: 538
+    price: 540
     tier: B
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1698689392/IMG_2354_i7bix5.jpg
     flowerName: B07
-    price: 539
+    price: 540
     tier: B
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1698689390/IMG_2353_d9jcth.jpg
     flowerName: B08
-    price: 538
+    price: 540
     tier: B
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1698689273/IMG_2352_moyt7t.jpg
     flowerName: B09
-    price: 539
+    price: 540
     tier: B
   - flowerName: C01
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1656363208/C01_wzte6d.jpg
@@ -92,13 +92,13 @@ services:
     flowerName: E01
     price: 950
     tier: E
-  - price: 953
+  - price: 950
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275429/E02_ogbo01.jpg
     flowerName: E02
     tier: E
   - flowerName: E03
     thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275432/E03_lgqcms.jpg
-    price: 952
+    price: 950
     tier: E
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1657275558/F01_jjqlji.jpg
     flowerName: F01
@@ -246,7 +246,7 @@ services:
     tier: J
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1698689395/IMG_2365_eituap.jpg
     flowerName: J06
-    price: 2449
+    price: 2500
     tier: J
   - thumbnail: https://res.cloudinary.com/djblau8at/image/upload/v1698689386/IMG_2369_qiy8rq.png
     flowerName: J07
